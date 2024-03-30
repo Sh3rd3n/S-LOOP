@@ -1,7 +1,7 @@
 ---
-const { animationDuration:number = 2, delay:number = 0.5, sectionId:number = "#"} = Astro.props;
+const { animationDuration = 2, delay , sectionId = "#"} = Astro.props;
 
-function getAnimationStyle(animationDuration, delay) {
+function getAnimationStyle(animationDuration : number, delay : number) {
     return `animation: fadeInOut ${animationDuration}s infinite ${delay}s;`;
 }
 ---
