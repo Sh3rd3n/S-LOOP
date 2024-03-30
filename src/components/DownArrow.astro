@@ -1,0 +1,21 @@
+---
+const { animationDuration = 2, delay = 0.5, sectionId = "#"} = Astro.props;
+
+function getAnimationStyle(animationDuration, delay) {
+    return `animation: fadeInOut ${animationDuration}s infinite ${delay}s;`;
+}
+---
+
+<div>
+    <a href={sectionId}>
+        <img class="w-20 -mb-16 text-white" src="/down-arrow.svg" alt="Scroll down" style={getAnimationStyle(animationDuration, 0)}/>
+        <img class="w-20 text-white" src="/down-arrow.svg" alt="Scroll down" style={getAnimationStyle(animationDuration, delay)}/>
+    </a>
+</div>
+
+<style>
+    @keyframes fadeInOut {
+        0% { opacity: 1; }
+        100% { opacity: 0; }
+    }
+</style>

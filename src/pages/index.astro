@@ -1,9 +1,10 @@
 ---
 import Layout from '../layouts/BaseLayout.astro';
+import DownArrow from '../components/DownArrow.astro';
 ---
 
 <Layout title="S-LOOP Kiteboarding School">
-	<nav class="absolute flex items-center justify-center gap-10 top-0 py-5 z-10 w-full [&>*]:text-4xl [&>*]:text-white">
+	<nav class="absolute flex items-center justify-center gap-10 top-0 py-5 z-10 w-full [&>*]:text-[2vw] [&>*]:text-white">
 		<a href="#school" tabindex="0" aria-label="Go to School section">SCUOLA</a>
 		<a href="#who-are-we" tabindex="0" aria-label="Go to About us section">CHI SIAMO</a>
 		<a href="#courses" tabindex="0" aria-label="Go to Courses section">CORSI</a>
@@ -11,13 +12,32 @@ import Layout from '../layouts/BaseLayout.astro';
 		<a href="#contacts" tabindex="0" aria-label="Go to Contacts section" class="text-white">CONTATTI</a>
 	</nav>
 
-	<section id="hero" class="flex items-center justify-center min-h-screen bg-cover bg-no-repeat bg-fix bg-parallax bg-[url('/hero-base.webp')]">
-		<p class="font-stencil text-[10rem] text-white opacity-70">RIDE <span class="text-teal">THE WIND</span></p>
+	<section id="hero" class="flex flex-col items-center justify-between min-h-screen bg-cover bg-no-repeat bg-fix bg-parallax bg-[url('/hero-base.webp')]">
+		<span></span>
+		<p class="font-stencil text-[10vw] text-white opacity-70">RIDE <span class="text-teal">THE WIND</span></p>
+		<DownArrow sectionId="#school" />
 	</section>
 
 	<section id="school" class="min-h-screen bg-teal">
 
 	</section>
+
+	<section id="who-are-we" class="min-h-screen">
+
+	</section>
+
+	<section id="courses" class="min-h-screen bg-teal">
+
+	</section>
+
+	<section id="purchase-and-rental" class="min-h-screen">
+
+	</section>
+
+	<section id="contacts" class="min-h-screen bg-teal">
+
+	</section>
+
 	<footer></footer>
 </Layout>
 
