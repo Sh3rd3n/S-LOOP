@@ -15,9 +15,6 @@ export default {
 			sans: ['"Alumni Sans"', ...defaultTheme.fontFamily.sans]
 		},
 		extend: {
-			backgroundImage: {
-				'hero-background': "url('/public/hero-base.jpg')"
-			},
 			colors: {
 				'teal': '#0BFCE1'
 			},
