@@ -1,36 +1,78 @@
 ---
 import Layout from '../layouts/BaseLayout.astro';
+import '../styles/global.css';
 ---
 
 <Layout title="S-LOOP Kiteboarding School">
-	<nav class="absolute flex items-center justify-center gap-10 top-0 py-5 z-10 w-full [&>*]:text-4xl [&>*]:text-white">
-		<a href="#school" tabindex="0" aria-label="Go to School section">SCUOLA</a>
-		<a href="#who-are-we" tabindex="0" aria-label="Go to About us section">CHI SIAMO</a>
-		<a href="#courses" tabindex="0" aria-label="Go to Courses section">CORSI</a>
-		<a href="#purchase-and-rental" tabindex="0" aria-label="Go to Purchase and Rental section">ACQUISTO E NOLEGGIO</a>
-		<a href="#contacts" tabindex="0" aria-label="Go to Contacts section" class="text-white">CONTATTI</a>
-	</nav>
+    <nav class="absolute w-full top-0 p-10 z-10 flex flex-row justify-between after:content-['']">
+        <img src="/sloop-logo.webp" alt="S-LOOP Kiteboarding School" class="size-32"/>
+        <div class="flex justify-center items-center gap-10 [&>*]:text-[2vw] [&>*]:text-white [&>*]:tabindex=0">
+            <a href="#school" aria-label="Go to School section">SCUOLA</a>
+            <a href="#who-are-we" aria-label="Go to About us section">CHI SIAMO</a>
+            <a href="#courses" aria-label="Go to Courses section">CORSI</a>
+            <a href="#purchase-and-rental" aria-label="Go to Purchase and Rental section">ACQUISTO E NOLEGGIO</a>
+            <a href="#contacts" aria-label="Go to Contacts section">CONTATTI</a>
+        </div>
+    </nav>
 
-	<section id="hero" class="flex items-center justify-center min-h-screen bg-cover bg-no-repeat bg-fix bg-parallax bg-[url('/hero-base.jpg')]">
-		<p class="font-stencil text-[10rem] text-white opacity-70">RIDE <span class="text-teal">THE WIND</span></p>
-	</section>
+    <section id="hero" class="flex items-center justify-center min-h-screen bg-cover bg-no-repeat bg-fix bg-parallax bg-[url('/hero-base.webp')]">
+        <h1 class="text-white opacity-70">RIDE <span class="text-teal">THE WIND</span></h1>
+    </section>
 
-	<section id="school" class="min-h-screen bg-teal">
+    <section id="school" class="min-h-screen border-b-black pr-[18rem] pl-[18rem] pt-[10rem]">
+        <div class="flex flex-row relative">
+            <span class="flex-1">
+                <img src="/kiter.webp" alt="kite surfer jumping" class="pt-20 pr-5"/>
+            </span>
+            <div class="absolute top-10 left-[42%] z-10 bg-teal size-52 opacity-50"></div>
+            <div class="flex-1 z-20 [&>*]:pr-10 [&>*]:pl-5">
+                <h2 class="pt-20">SCUOLA</h2>
+                <h3 class="text-teal w-3/4">Benvenuti alla S-Loop Kiteboarding School di Olbia</h3>
+                <p>La S-Loop Kiteboarding School nasce nel 2023 dall'idea di un kiteboarder <strong>con oltre 10 anni di
+                    esperienza</strong> nel campo.</p>
+                <p>Dopo un primo anno impegnativo, ci stiamo preparando con entusiasmo per affrontare il secondo anno
+                    con ancora più passione e determinazione.</p>
+            </div>
+            <div class="absolute bottom-0 left-[80%] z-10 bg-teal size-52 opacity-30"></div>
+        </div>
+        <p>Presso la nostra scuola, <strong>ci impegniamo a introdurre le persone al magnifico sport del kiteboarding e
+            a promuovere il kitesurf con professionalità, buon umore e passione.</strong> Offriamo corsi individuali e
+            di gruppo sia per principianti che per coloro che desiderano perfezionare le proprie abilità.</p>
+        <p>Situati sulla splendida costa sarda, a due passi da Olbia, godiamo di un vento termico che ci accompagna
+            dalla primavera alla fine dell'estate, offrendo condizioni ideali per praticare il kiteboarding.</p>
+        <p><strong>Unisciti a noi presso la S-Loop e scopri il fascino e l'emozione di questo entusiasmante sport!</strong></p>
+    </section>
 
-	</section>
-	<footer></footer>
+    <section id="who-are-we" class="min-h-screen">
+
+    </section>
+
+    <section id="courses" class="min-h-screen bg-teal">
+
+    </section>
+
+    <section id="purchase-and-rental" class="min-h-screen">
+
+    </section>
+
+    <section id="contacts" class="min-h-screen bg-teal">
+
+    </section>
+
+    <footer></footer>
 </Layout>
 
 <style>
-	@keyframes bg-parallax {
-		0% {
-			background-position: 50% 0%;
-		}
-		100% {
-			background-position: 50% 100%;
-		}
-	}
-	.bg-parallax {
-		animation: bg-parallax 30s infinite alternate;
-	}
+    @keyframes bg-parallax {
+        0% {
+            background-position: 50% 0%;
+        }
+        100% {
+            background-position: 50% 100%;
+        }
+    }
+
+    .bg-parallax {
+        animation: bg-parallax 30s infinite alternate;
+    }
 </style>
