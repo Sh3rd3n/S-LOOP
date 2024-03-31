@@ -12,7 +12,8 @@ export default {
 		},
 		fontFamily: {
 			stencil: ['"Allerta Stencil"', ...defaultTheme.fontFamily.serif],
-			sans: ['"Alumni Sans"', ...defaultTheme.fontFamily.sans]
+			sans: ['"Alumni Sans"', ...defaultTheme.fontFamily.sans],
+			'josefin': ['"Josefin Sans"', ...defaultTheme.fontFamily.sans],
 		},
 		extend: {
 			colors: {
