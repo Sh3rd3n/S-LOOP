@@ -1,34 +1,38 @@
-h1 {
-    font-family: 'Allerta Stencil', sans-serif;
-    font-weight: 400;
-    font-size: 12rem;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-h2 {
-    font-family: 'Allerta Stencil', sans-serif;
-    font-weight: 400;
-    font-size: 5.625rem;
-}
+/*h1 {*/
+/*    font-family: 'Allerta Stencil', sans-serif;*/
+/*    font-weight: 400;*/
+/*    font-size: 12rem;*/
+/*}*/
 
-h3 {
-    font-family: 'Allerta Stencil', sans-serif;
-    font-weight: 400;
-    font-size: 3rem;
-    line-height: 3.196rem;
-    padding-top: 3rem;
-}
+/*h2 {*/
+/*    font-family: 'Allerta Stencil', sans-serif;*/
+/*    font-weight: 400;*/
+/*    font-size: 5.625rem;*/
+/*}*/
 
-p {
-    font-family: 'Jost', sans-serif;
-    font-weight: 300;
-    /*font-size: 1.25rem;*/
-    font-size: 1.5rem;
-    /*line-height: 1.806rem;*/
-    line-height: 2rem;
-    padding-top: 3rem;
-}
+/*h3 {*/
+/*    font-family: 'Allerta Stencil', sans-serif;*/
+/*    font-weight: 400;*/
+/*    font-size: 3rem;*/
+/*    line-height: 3.196rem;*/
+/*    padding-top: 3rem;*/
+/*}*/
 
-strong {
-    font-family: 'Jost', sans-serif;
-    font-weight: 600;
-}
+/*p {*/
+/*    font-family: 'Jost', sans-serif;*/
+/*    font-weight: 300;*/
+/*    !*font-size: 1.25rem;*!*/
+/*    font-size: 1.5rem;*/
+/*    !*line-height: 1.806rem;*!*/
+/*    line-height: 2rem;*/
+/*    padding-top: 3rem;*/
+/*}*/
+
+/*strong {*/
+/*    font-family: 'Jost', sans-serif;*/
+/*    font-weight: 600;*/
+/*}*/

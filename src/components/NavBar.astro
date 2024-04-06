@@ -1,3 +1,71 @@
 ---
-
 ---
+
+<nav class="fixed w-full top-0 z-10">
+    <div id="nav-header" class="p-10 flex flex-row justify-between items-center md:after:content-['']">
+        <img id="school-logo" src="/sloop-logo.webp" alt="S-LOOP Kiteboarding School" class="size-24 lg:size-32"/>
+
+        <div class="sr-only md:not-sr-only flex gap-6 lg:gap-10 justify-center items-center">
+            <a href="#school" aria-label="Go to School section" class="text-white md:text-3xl lg:text-4xl font-normal">SCUOLA</a>
+            <a href="#who-are-we" aria-label="Go to About us section" class="text-white md:text-3xl lg:text-4xl font-normal">CHI SIAMO</a>
+            <a href="#courses" aria-label="Go to Courses section" class="text-white md:text-3xl lg:text-4xl font-normal">CORSI</a>
+            <a href="#purchase-and-rental" aria-label="Go to Purchase and Rental section" class="text-white md:text-3xl lg:text-4xl font-normal">ACQUISTO E NOLEGGIO</a>
+            <a href="#contacts" aria-label="Go to Contacts section" class="text-white md:text-3xl lg:text-4xl font-normal">CONTATTI</a>
+        </div>
+
+        <button id="mobile-menu-button" type="button" class="md:hidden h-8 w-10 text-white group" aria-checked="false">
+            <span class="relative flex overflow-hidden items-center justify-center size-full transform transition-all duration-200">
+                <span class="flex flex-col justify-between size-full transform transition-all duration-300 origin-center overflow-hidden">
+                    <span class="bg-white h-0.5 w-10 transform transition-all duration-300 origin-left group-aria-checked:translate-y-10 delay-100"></span>
+                    <span class="bg-white h-0.5 w-10 rounded transform transition-all duration-300 group-aria-checked:translate-y-10 delay-75"></span>
+                    <span class="bg-white h-0.5 w-10 transform transition-all duration-300 origin-left group-aria-checked:translate-y-10"></span>
+
+                    <span class="absolute flex items-center justify-between pt-4 transform transition-all duration-500 -translate-x-12 group-aria-checked:translate-x-0">
+                        <span class="absolute bg-white h-0.5 w-10 transform transition-all duration-500 rotate-0 delay-300 group-aria-checked:rotate-45"></span>
+                        <span class="absolute bg-white h-0.5 w-10 transform transition-all duration-500 -rotate-0 delay-300 group-aria-checked:-rotate-45"></span>
+                    </span>
+                </span>
+            </span>
+        </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-black bg-opacity-70">
+        <div class="gap-2 p-2 flex flex-col animate-fade-down animate-once animate-ease-out">
+            <a href="#school" aria-label="Go to School section" class="text-white hover:bg-teal hover:text-black block px-3 py-2 text-xl sm:text-2xl font-medium">SCUOLA</a>
+            <a href="#who-are-we" aria-label="Go to About us section" class="text-white hover:bg-teal hover:text-black block px-3 py-2 text-xl sm:text-2xl font-medium">CHI SIAMO</a>
+            <a href="#courses" aria-label="Go to Courses section" class="text-white hover:bg-teal hover:text-black block px-3 py-2 text-xl sm:text-2xl font-medium">CORSI</a>
+            <a href="#purchase-and-rental" aria-label="Go to Purchase and Rental section" class="text-white hover:bg-teal hover:text-black block px-3 py-2 text-xl sm:text-2xl font-medium">ACQUISTO E NOLEGGIO</a>
+            <a href="#contacts" aria-label="Go to Contacts section" class="text-white hover:bg-teal hover:text-black block px-3 py-2 text-xl sm:text-2xl font-medium">CONTATTI</a>
+        </div>
+    </div>
+</nav>
+
+<script is:inline>
+    const navHeader = document.getElementById('nav-header');
+    const navMenu = document.getElementById("mobile-menu");
+    const button = document.getElementById('mobile-menu-button');
+    const logo = document.getElementById('school-logo');
+
+    button.addEventListener('click', function() {
+        this.setAttribute('aria-checked', this.getAttribute('aria-checked') === 'true' ? 'false' : 'true');
+        navHeader.classList.toggle('!bg-black');
+        navHeader.classList.toggle('!bg-opacity-70');
+        navMenu.classList.toggle('hidden');
+        document.body.style.overflow = this.getAttribute('aria-checked') === 'true' ? 'hidden' : 'auto';
+    });
+
+    window.addEventListener('scroll', () => {
+        const isScrolled = window.scrollY > 0;
+        navHeader.classList.toggle('animate-shrink-navbar', isScrolled);
+        navHeader.classList.toggle('animate-expand-navbar', !isScrolled);
+        navHeader.classList.toggle('animate-shrink-navbar', isScrolled);
+        navHeader.classList.toggle('animate-expand-navbar', !isScrolled);
+        if(isScrolled) {
+            logo.classList.replace('size-24', 'size-20');
+            logo.classList.replace('lg:size-32', 'lg:size-24');
+        } else {
+            logo.classList.replace('size-20', 'size-24');
+            logo.classList.replace('lg:size-24', 'lg:size-32');
+        }
+    });
+</script>
