@@ -6,8 +6,8 @@ export default {
 	theme: {
 		fontFamily: {
 			stencil: ['"Allerta Stencil"', ...defaultTheme.fontFamily.serif],
-			sans: ['"Alumni Sans"', ...defaultTheme.fontFamily.sans],
 			'jost': ['"Jost"', ...defaultTheme.fontFamily.sans],
+			sans: ['"Alumni Sans"', ...defaultTheme.fontFamily.sans],
 		},
 		extend: {
 			colors: {
