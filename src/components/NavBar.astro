@@ -4,7 +4,7 @@
 <nav class="z-40 fixed w-full top-0 font-light">
     <div id="nav-header" class="p-10 flex flex-row justify-between items-center md:after:content-['']">
         <a href="#hero" aria-label="Go to Home section">
-            <img id="school-logo" src="/sloop-logo.webp" alt="S-LOOP Kiteboarding School" class="size-24 lg:size-32"/>
+            <img id="school-logo" src="/sloop-logo.webp" alt="S-LOOP Kiteboarding School" class="transition-all duration-500 w-24 h-24 lg:w-32 lg:h-32"/>
         </a>
 
         <div class="sr-only md:not-sr-only flex gap-6 lg:gap-10 justify-center items-center">
@@ -63,11 +63,11 @@
         navHeader.classList.toggle('animate-shrink-navbar', isScrolled);
         navHeader.classList.toggle('animate-expand-navbar', !isScrolled);
         if(isScrolled) {
-            logo.classList.replace('size-24', 'size-20');
-            logo.classList.replace('lg:size-32', 'lg:size-24');
+            logo.classList.remove('w-24', 'h-24', 'lg:w-32', 'lg:h-32');
+            logo.classList.add('w-20', 'h-20', 'lg:w-24', 'lg:h-24');
         } else {
-            logo.classList.replace('size-20', 'size-24');
-            logo.classList.replace('lg:size-24', 'lg:size-32');
+            logo.classList.remove('w-20', 'h-20', 'lg:w-24', 'lg:h-24');
+            logo.classList.add('w-24', 'h-24', 'lg:w-32', 'lg:h-32');
         }
     });
 </script>
