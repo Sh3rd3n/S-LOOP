@@ -39,6 +39,10 @@ export default {
 				'shrink-navbar': 'shrink-navbar 0.3s linear forwards',
 				'expand-navbar': 'expand-navbar 0.3s linear forwards',
 			},
+		},
+		rotate: {
+			'30': '30deg',
+			...defaultTheme.rotate,
 		}
 	},
 	plugins: [

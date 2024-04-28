@@ -1,6 +1,20 @@
 ---
+import TextParagraph from "./TextParagraph.astro";
+let spanCount = 14;
 ---
 
 <section id="courses" class="min-h-screen">
+    <div class="overflow-hidden h-24 md:h-32 mt-4 md:mt-10 flex flex-row justify-evenly gap-6">
+        {Array.from({length: spanCount}, (_, i) => (
+                <span class={`rotate-30 w-4 md:w-6 h-full bg-teal bg-opacity-60 -z-10 ${i >= 7 ? 'hidden md:inline' : ''}`}></span>
+        ))}
+    </div>
 
+    <h2 class="w-full -mt-12 px-10 xl:px-72 font-stencil font-normal text-7xl text-center">CORSI</h2>
+
+    <div class="px-10 xl:px-72">
+        <TextParagraph content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam malesuada diam magna, ac fermentum nunc dapibus a. Sed feugiat at magna id cursus. Nam feugiat at felis ut viverra. Sed sed nunc eget nibh tincidunt luctus ac nec dui. Donec velit massa, facilisis a augue at, mattis sodales tortor. Aliquam id lectus ut quam sodales egestas vel et lectus. Phasellus eu ligula vel nunc ultricies eleifend efficitur vitae ante. Etiam sapien turpis, elementum vel urna ut, molestie faucibus mi. Integer tincidunt eros ex, ac tempor diam varius ac. Aliquam vel eros rhoncus, tempus risus nec, volutpat tortor. Vivamus lobortis efficitur mi non aliquam." />
+    </div>
+
+    <img src="/kites.webp" class="w-full object-cover max-h-80 mt-6" alt="Kiters surfing on a beautiful sea" />
 </section>
