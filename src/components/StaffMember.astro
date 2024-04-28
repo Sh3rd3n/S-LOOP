@@ -2,11 +2,11 @@
 let { name, image, description, imageOnRight } = Astro.props;
 ---
 
-<h3 class="md:hidden w-full mt-10 px-10 xl:px-72 font-stencil font-normal text-5xl text-teal leading-snug">{name}</h3>
+<h3 class="md:hidden w-full mt-10 px-10 xl:px-72 font-stencil font-normal text-5xl leading-snug">{name}</h3>
 <div class={`w-full px-10 xl:px-72 flex flex-col md:flex-row items-start gap-2 mt-2 md:mt-12 ${imageOnRight ? 'md:flex-row-reverse' : ''}`}>
     <img src={image} alt={`${name} picture`} class="aspect-square md:aspect-auto object-cover -z-20 md:w-1/2 lg:pr-4 max-w-[685x]"/>
     <div class="font-jost font-light text-lg lg:text-xl md:!leading-relaxed lg:!leading-loose">
-        <h3 class="hidden md:block w-full my-6 font-stencil font-normal text-6xl text-teal leading-snug">{name}</h3>
+        <h3 class="hidden md:block w-full my-6 font-stencil font-normal text-6xl leading-snug">{name}</h3>
         <p><Fragment set:html={description} /></p>
     </div>
 </div>
