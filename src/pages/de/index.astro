@@ -1,0 +1,50 @@
+---
+import Layout from '../../layouts/BaseLayout.astro';
+import NavBar from '../../components/NavBar.astro';
+import HeroSection from '../../components/Hero.astro';
+import SchoolSection from '../../components/School.astro';
+import WhoAreWeSection from '../../components/WhoAreWe.astro';
+import CoursesSection from '../../components/Courses.astro';
+import PurchaseAndRentalSection from '../../components/PurchaseAndRental.astro';
+import ContactsSection from '../../components/Contacts.astro';
+---
+
+<Layout title="S-LOOP Kiteboarding School">
+    <NavBar links={[
+        { href: "#school", label: "SCHULE" },
+        { href: "#who-are-we", label: "WER WIR SIND" },
+        { href: "#courses", label: "KURSE" },
+        { href: "#purchase-and-rental", label: "KAUF UND VERMIETUNG" },
+        { href: "#contacts", label: "KONTAKTE" }
+    ]} />
+
+    <HeroSection />
+
+    <SchoolSection
+        header="SCHULE"
+        subHeader="Willkommen in der <span class='text-nowrap'>S-Loop</span> Kiteschule in Olbia"
+        paragraph1="Ihr Einstieg in die aufregende Welt des <strong>Kitesurfens</strong> und <span class='text-nowrap'><strong>Wing Foil.</strong></span>"
+        paragraph2="Die <strong>S-Loop</strong> Schule befindet sich am beeindruckenden Strand von Saline, nur wenige Minuten von der Stadt Olbia entfernt. Sie ist eine Schule mit einem neuen Konzept, die sich zum Referenzpunkt für Wassersportbegeisterte entwickeln möchte."
+        paragraph3="Als offizielle <strong>Duotone</strong> und <strong>ION</strong> Schule garantieren wir den Zugang zu der <strong>modernsten und sichersten Ausrüstung auf dem Markt</strong> und gewährleisten so eine erstklassige Lernerfahrung. Unsere Mitgliedschaft beim <strong>CONI</strong> und <strong>MSP Italia</strong> belegt unser Engagement für <strong>Exzellenz und Einhaltung höchster Standards</strong> im Bereich Wassersport."
+        paragraph4="Unsere Kurse sind darauf ausgelegt, angehende Surfer jeden Alters willkommen zu heißen, <strong>von Anfängern, die zum ersten Mal das Board berühren, bis hin zu Experten, die ihre Technik perfektionieren möchten</strong>. Mit einem Team hochqualifizierter Lehrer bieten wir nicht nur praktisches Training, sondern auch <strong>Zertifizierungskurse für diejenigen, die ihre Leidenschaft zum Beruf machen möchten</strong>."
+        paragraph5="Die Wahl von S-Loop bedeutet, sich für <strong>Qualität, Sicherheit und garantierten Spaß beim Unterricht</strong> zu entscheiden. Wir freuen uns darauf, gemeinsam die Wellen und den Wind zu erobern."
+        partners="UNSERE OFFIZIELLEN PARTNER"
+    />
+
+    <WhoAreWeSection
+        header="WER WIR SIND"
+        paragraph1="<strong>Bei <span class='text-nowrap'>S-Loop</span> sind wir mehr als ein Team.</strong>"
+        paragraph2="Diejenigen, die unsere Schule besuchen, wissen, dass sie nicht nur ein Umfeld mit modernsten Unterrichtstechniken vorfinden, sondern auch wahre Freunde und vertrauenswürdige Personen."
+        cristianBio="<p><strong>Cristian Jesùs Cancino Mondaca,</strong> Gründer der <span class='text-nowrap'>S-Loop</span>-Schule, ist ein Veteran der Wassersportarten mit <strong>über 10 Jahren Erfahrung</strong>, die sein Engagement und seine Liebe zum Kitesurfen bezeugen.</p><br><p>Cristians Schule ist das Ergebnis seines Engagements, seine Leidenschaft mit anderen Enthusiasten zu teilen. Seine Unterrichtsmethode zielt darauf ab, spaßig, dynamisch und vor allem effektiv zu sein, was es den Schülern ermöglicht, schnell und in vollständiger Sicherheit zu lernen.</p>"
+        andreaBio="Andrea ist Kitesurflehrer mit über 5 Jahren Erfahrung. Er begann in Italien zu unterrichten, zog dann nach Australien, wo er als Lehrer und Schulleiter arbeitete. Zurück in Italien gründete er gemeinsam mit Cristian die S-Loop Kiteschule mit dem Ziel, eine einladende und professionelle Umgebung für Wassersportbegeisterte zu schaffen."
+        lisaBio="Lisa ist Kitesurflehrerin mit über 5 Jahren Erfahrung. Sie begann in Italien zu unterrichten, zog dann nach Australien, wo sie als Lehrerin und Schulleiterin arbeitete. Zurück in Italien gründete sie gemeinsam mit Cristian und Andrea die S-Loop Kiteschule mit dem Ziel, eine einladende und professionelle Umgebung für Wassersportbegeisterte zu schaffen."
+    />
+
+    <CoursesSection
+        header="KURSE"
+    />
+
+    <PurchaseAndRentalSection />
+
+    <ContactsSection />
+</Layout>

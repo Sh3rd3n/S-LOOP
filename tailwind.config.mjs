@@ -43,7 +43,11 @@ export default {
 		rotate: {
 			'30': '30deg',
 			...defaultTheme.rotate,
-		}
+		},
+		aspectRatio: {
+			'4/5': '4 / 5',
+			...defaultTheme.aspectRatio,
+		},
 	},
 	plugins: [
 		require('tailwindcss-animated')

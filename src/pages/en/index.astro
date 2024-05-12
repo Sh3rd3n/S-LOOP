@@ -1,0 +1,50 @@
+---
+import Layout from '../../layouts/BaseLayout.astro';
+import NavBar from '../../components/NavBar.astro';
+import HeroSection from '../../components/Hero.astro';
+import SchoolSection from '../../components/School.astro';
+import WhoAreWeSection from '../../components/WhoAreWe.astro';
+import CoursesSection from '../../components/Courses.astro';
+import PurchaseAndRentalSection from '../../components/PurchaseAndRental.astro';
+import ContactsSection from '../../components/Contacts.astro';
+---
+
+<Layout title="S-LOOP Kiteboarding School">
+    <NavBar links={[
+        { href: "#school", label: "SCHOOL" },
+        { href: "#who-are-we", label: "WHO WE ARE" },
+        { href: "#courses", label: "COURSES" },
+        { href: "#purchase-and-rental", label: "PURCHASE AND RENTAL" },
+        { href: "#contacts", label: "CONTACTS" }
+    ]} />
+
+    <HeroSection />
+
+    <SchoolSection
+        header="SCHOOL"
+        subHeader="Welcome to the <span class='text-nowrap'>S-Loop</span> Kiteboarding School in Olbia"
+        paragraph1="Your gateway to the exciting world of <strong>Kitesurfing</strong> and <span class='text-nowrap'><strong>Wing Foil.</strong></span>"
+        paragraph2="Located on the suggestive Saline beach, just a few minutes from the city of Olbia, the <strong>S-Loop</strong> is a new-concept school that aims to become a reference point for water sports enthusiasts."
+        paragraph3="As an official <strong>Duotone</strong> and <strong>ION</strong> school, we guarantee access to the <strong>most advanced and safe equipment on the market</strong>, ensuring a superior quality learning experience. Our affiliation with the <strong>CONI</strong> and <strong>MSP Italia</strong> attests to our commitment to <strong>excellence and compliance with the highest standards</strong> in the field of water sports."
+        paragraph4="Our courses are designed to welcome aspiring surfers of all ages, <strong>from beginners touching the board for the first time, to experts seeking to perfect their technique</strong>. With a team of highly skilled instructors, we offer not only practical training, but <strong>also certification courses for those who wish to turn their passion into a profession</strong>."
+        paragraph5="Choosing S-Loop means opting for <strong>quality, safety, and guaranteed fun instruction</strong>. We look forward to riding the waves and wind together."
+        partners="OUR OFFICIAL PARTNERS"
+    />
+
+    <WhoAreWeSection
+        header="WHO WE ARE"
+        paragraph1="<strong>At <span class='text-nowrap'>S-Loop</span> we are more than a team.</strong>"
+        paragraph2="Those who attend our school know that they will find not only an environment at the forefront of teaching techniques, but also true friends and trusted people."
+        cristianBio="<p><strong>Cristian Jesùs Cancino Mondaca,</strong> founder of the <span class='text-nowrap'>S-Loop</span> school, is a veteran of water sports, with <strong>over 10 years of experience</strong> that testify to his dedication and love for Kitesurfing.</p><br><p>Cristian's school is the fruit of his commitment to share his passion with other enthusiasts. His teaching method aims to be fun, dynamic and above all effective, allowing students to learn quickly and in complete safety.</p>"
+        andreaBio="Andrea is a kitesurf instructor with over 5 years of experience. He started teaching in Italy, then moved to Australia, where he worked as an instructor and school manager. Back in Italy, he founded the S-Loop Kiteboarding School together with Cristian, with the aim of creating a welcoming and professional environment for water sports enthusiasts."
+        lisaBio="Lisa is a kitesurf instructor with over 5 years of experience. She started teaching in Italy, then moved to Australia, where she worked as an instructor and school manager. Back in Italy, she founded the S-Loop Kiteboarding School together with Cristian and Andrea, with the aim of creating a welcoming and professional environment for water sports enthusiasts."
+    />
+
+    <CoursesSection
+        header="COURSES"
+    />
+
+    <PurchaseAndRentalSection />
+
+    <ContactsSection />
+</Layout>

@@ -1,0 +1,33 @@
+---
+
+---
+
+<div id="carousel" class="w-full flex items-center md:justify-center gap-6 py-6 overflow-x-auto">
+    <div class="aspect-4/5 w-1/4 bg-teal border-black border-2 ml-6"></div>
+
+    <div class="aspect-4/5 w-1/4 bg-teal border-black border-2"></div>
+
+    <div class="aspect-4/5 w-1/4 bg-teal border-black border-2 mr-6"></div>
+</div>
+
+<script>
+    // Select the div you want to animate
+    const div: HTMLElement | null = document.querySelector('#test');
+
+    // Create an instance of IntersectionObserver
+    const observer = new IntersectionObserver(
+        (entries: IntersectionObserverEntry[]) => {
+            entries.forEach((entry: IntersectionObserverEntry) => {
+                // If the div is in the viewport, add the 'animate' class
+                if (entry.isIntersecting)
+                    entry.target.classList.add('animate');
+                else
+                    entry.target.classList.remove('animate');
+            });
+        });
+
+    // Start observing the div
+    if (div) {
+        observer.observe(div);
+    }
+</script>

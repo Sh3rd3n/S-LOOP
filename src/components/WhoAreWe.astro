@@ -1,32 +1,34 @@
 ---
 import StaffMember from './StaffMember.astro';
 import TextParagraph from "./TextParagraph.astro";
+
+let { header, paragraph1, paragraph2, cristianBio, andreaBio, lisaBio } = Astro.props;
 ---
 
-<section id="who-are-we" class="min-h-screen mt-20 relative">
+<section id="who-are-we" class="min-h-screen mt-20 relative overflow-hidden">
     <div class="w-full lg:w-4/6 h-8 bg-teal bg-opacity-70 absolute top-0 lg:right-0 -z-10"></div>
     <div class="w-full lg:w-4/6 h-8 bg-teal bg-opacity-50 absolute top-14 lg:right-0 -z-10"></div>
     <div class="w-full lg:w-4/6 h-8 bg-teal bg-opacity-30 absolute top-28 lg:right-0 -z-10"></div>
 
     <h2 class="w-full px-10 xl:px-72 font-stencil font-normal text-7xl text-left md:text-left">
-        CHI <span class="block md:inline">SIAMO</span>
+        {header}
     </h2>
 
     <div class="w-full md:px-10 xl:px-72 flex flex-col items-center gap-2 md:flex-row mt-6 md:mt-0">
         <div class="md:w-1/3 px-10 md:px-0 font-jost font-light text-lg lg:text-xl md:!leading-relaxed lg:!leading-loose">
-            <TextParagraph content="<strong>Alla <span class='text-nowrap'>S-Loop</span> siamo più che un team.</strong>" />
-            <TextParagraph content="Chi frequenta la nostra scuola sa di trovare non solo un ambiente all’avanguardia nelle tecniche di insegnamento, ma dei veri e propri amici e persone di fiducia." />
+            <TextParagraph content={paragraph1} />
+            <TextParagraph content={paragraph2} />
         </div>
         <img src="/team.webp" alt="kite surfer jumping" class="md:w-2/3 -z-20 aspect-video object-cover lg:pr-4 max-w-[685x]"/>
     </div>
 
     <div class="size-24 md:size-32 bg-teal bg-opacity-40 absolute right-10 md:right-1/2 -mt-12 -z-10"></div>
 
-    <StaffMember name="CRISTIAN" image="/cristian.webp" description="<p><strong>Cristian Jesùs Cancino Mondaca,</strong> fondatore della scuola <span class='text-nowrap'>S-Loop</span>, è veterano degli sport acquatici, con <strong>oltre 10 anni di esperienza</strong> che testimoniano la sua dedizione e amore per il Kitesurf.</p><br><p>La scuola di Cristian è il frutto del suo impegno nel voler condividere la sua passione con altri appassionati. Il suo metodo di insegnamento mira a essere divertente, dinamico e soprattutto efficace, permettendo agli studenti di imparare rapidamente e in completa sicurezza.</p>" />
+    <StaffMember name="CRISTIAN" image="/cristian.webp" description={cristianBio} />
 
     <div class="w-2/5 h-24 md:h-32 bg-teal bg-opacity-60 mt-4 md:mt-10 -z-10"></div>
 
-    <StaffMember name="ANDREA" image="/andrea.webp" imageOnRight={true} description="Andrea, fondatore della scuola S-Loop, è veterano degli sport acquatici, con oltre 10 anni di esperienza che testimoniano la sua dedizione e amore per il Kitesurf." />
+    <StaffMember name="ANDREA" image="/andrea.webp" imageOnRight={true} description={andreaBio} />
 
     <div class="h-24 md:h-32 mt-4 md:mt-10 flex flex-row justify-end gap-6">
         <span class="w-3 md:w-10 h-full bg-teal bg-opacity-60"></span>
@@ -36,7 +38,7 @@ import TextParagraph from "./TextParagraph.astro";
         <span class="w-2/5 h-full bg-teal bg-opacity-60"></span>
     </div>
 
-    <StaffMember name="LISA" image="/lisa.webp" description="Lisa, fondatrice della scuola S-Loop, è veterana degli sport acquatici, con oltre 10 anni di esperienza che testimoniano la sua dedizione e amore per il Kitesurf." />
+    <StaffMember name="LISA" image="/lisa.webp" description={lisaBio} />
 
     <div class="px-10 xl:px-72 mt-4 md:mt-10 flex flex-col md:flex-row gap-10 md:gap-40">
         <div class="relative w-2/3 md:w-1/2">

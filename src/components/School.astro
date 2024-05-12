@@ -1,22 +1,24 @@
 ---
-import TextParagraph from '../components/TextParagraph.astro';
+import TextParagraph from './TextParagraph.astro';
+
+let { header, subHeader, paragraph1, paragraph2, paragraph3, paragraph4, paragraph5 } = Astro.props;
 ---
 
 <section id="school" class="min-h-screen mt-20 px-10 xl:px-72 relative">
     <div class="flex flex-col md:flex-row">
         <div class="md:order-last md:w-1/2 md:pl-2 lg:pl-4 text-normal md:text-xl">
-            <h2 class="font-stencil font-normal text-7xl w-full text-left">SCHOOL</h2>
+            <h2 class="font-stencil font-normal text-7xl w-full text-left"><Fragment set:html={header} /></h2>
             <div class="size-32 bg-teal bg-opacity-50 absolute -top-7 -z-10 md:-ml-20"></div>
-            <h3 class="font-stencil font-normal text-4xl text-teal leading-snug w-full my-6">Benvenuti alla <span class="text-nowrap">S-Loop</span> Kiteboarding School di Olbia</h3>
-            <TextParagraph content="La vostra porta d’accesso al mondo emozionante del <strong>Kitesurf</strong> e del <span class='text-nowrap'><strong>Wing Foil.</strong></span>" />
-            <TextParagraph content="Situata nella suggestiva spiaggia delle Saline, a pochi minuti dalla città di Olbia, la <strong>S-Loop</strong> è una scuola di nuova concezione che si propone di diventare un punto di riferimento per gli appassionati di sport acquatici." />
+            <h3 class="font-stencil font-normal text-4xl text-teal leading-snug w-full my-6"><Fragment set:html={subHeader} /></h3>
+            <TextParagraph content={paragraph1} />
+            <TextParagraph content={paragraph2} />
             <div class="size-32 bg-teal bg-opacity-30 absolute right-0 -z-10"></div>
         </div>
-        <img src="/kiter.webp" alt="kite surfer jumping" class="-z-20 object-cover mt-6 md:w-1/2 md:pt-0 md:pr-2 lg:pr-4 max-w-[507px]"/>
+        <img src="/kiter.webp" alt="kite surfer jumping" class="-z-20 aspect-4/5 mt-6 md:w-1/2 md:pt-0 md:pr-2 lg:pr-4 max-w-[507px]"/>
     </div>
-    <TextParagraph content=" In quanto scuola ufficiale <strong>Duotone</strong> e <strong>ION</strong> garantiamo l’accesso alle <strong>più avanzate e sicure attrezzature sul mercato</strong>, assicurando un’esperienza di apprendimento di qualità superiore. La nostra affiliazione con il <strong>CONI</strong> e l’<strong>MSP Italia</strong> testimonia l’impegno verso <strong>l’eccellenza e la conformità agli standard più elevati</strong> nel campo degli sport nautici." />
-    <TextParagraph content="I nostri corsi sono progettati per accogliere aspiranti surfisti di tutte le età, <strong>dai principianti che toccano la tavola per la prima volta, agli esperti che cercano di perfezionare la loro tecnica</strong>. Con un team di istruttori di altissimo livello, offriamo non solo formazione pratica, ma <strong>anche corsi di certificazione per coloro che desiderano trasformare la loro passione in professione</strong>." />
-    <TextParagraph content="Scegliere S-Loop significa optare per <strong>un’istruzione di qualità, sicurezza e divertimento garantiti</strong>. Vi aspettiamo per solcare insieme le onde e il vento." />
+    <TextParagraph content={paragraph3} />
+    <TextParagraph content={paragraph4} />
+    <TextParagraph content={paragraph5} />
 </section>
 
 <div class="w-full flex justify-center items-center my-10 gap-6">
