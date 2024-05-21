@@ -1,33 +1,53 @@
 ---
-
 ---
 
 <div id="carousel" class="w-full flex items-center md:justify-center gap-6 py-6 overflow-x-auto">
-    <div class="aspect-4/5 w-1/4 bg-teal border-black border-2 ml-6"></div>
-
-    <div class="aspect-4/5 w-1/4 bg-teal border-black border-2"></div>
-
-    <div class="aspect-4/5 w-1/4 bg-teal border-black border-2 mr-6"></div>
+    <div id='card-1' class='card aspect-4/5 bg-teal ml-6'></div>
+    <div class='card aspect-4/5 bg-teal'></div>
+    <div class='card aspect-4/5 bg-teal mr-6'></div>
 </div>
 
+<style>
+    #carousel {
+        height: 500px;
+    }
+
+    .card {
+        height: 300px;
+    }
+
+    #card-1 {
+        height: 400px;
+    }
+</style>
+
 <script>
-    // Select the div you want to animate
-    const div: HTMLElement | null = document.querySelector('#test');
+    const carousel = document.getElementById('carousel');
+    const cards = carousel.getElementsByClassName('card');
 
-    // Create an instance of IntersectionObserver
-    const observer = new IntersectionObserver(
-        (entries: IntersectionObserverEntry[]) => {
-            entries.forEach((entry: IntersectionObserverEntry) => {
-                // If the div is in the viewport, add the 'animate' class
-                if (entry.isIntersecting)
-                    entry.target.classList.add('animate');
-                else
-                    entry.target.classList.remove('animate');
-            });
-        });
+    carousel.addEventListener('scroll', () => {
+        for (const card of cards) {
+            const cardBaseHeight = 300;
+            console.log(cardBaseHeight);
+            const newHeight = Math.round(cardBaseHeight + getVisiblePercentage(card) * 100);
+            console.log(newHeight + "\n\n");
+            card.style.height = `${newHeight}px`;
+        }
+    });
 
-    // Start observing the div
-    if (div) {
-        observer.observe(div);
+    function getVisiblePercentage(element) {
+        const rect = element.getBoundingClientRect();
+        const windowHeight = (window.innerHeight || document.documentElement.clientHeight);
+        const windowWidth = (window.innerWidth || document.documentElement.clientWidth);
+
+        const vertInView = (rect.top <= windowHeight) && ((rect.top + rect.height) >= 0);
+        const horInView = (rect.left <= windowWidth) && ((rect.left + rect.width) >= 0);
+
+        const vertVisible = vertInView
+            ? ((Math.min(rect.top + rect.height, windowHeight) - Math.max(rect.top, 0)) / rect.height) : 0;
+        const horVisible = horInView
+            ? ((Math.min(rect.left + rect.width, windowWidth) - Math.max(rect.left, 0)) / rect.width) : 0;
+
+        return vertVisible * horVisible;
     }
 </script>

@@ -2,7 +2,7 @@
 import StaffMember from './StaffMember.astro';
 import TextParagraph from "./TextParagraph.astro";
 
-let { header, paragraph1, paragraph2, cristianBio, andreaBio, lisaBio } = Astro.props;
+let { header, paragraph1, paragraph2, cristianBio, marcoBio, lisaBio } = Astro.props;
 ---
 
 <section id="who-are-we" class="min-h-screen mt-20 relative overflow-hidden">
@@ -28,7 +28,7 @@ let { header, paragraph1, paragraph2, cristianBio, andreaBio, lisaBio } = Astro.
 
     <div class="w-2/5 h-24 md:h-32 bg-teal bg-opacity-60 mt-4 md:mt-10 -z-10"></div>
 
-    <StaffMember name="ANDREA" image="/andrea.webp" imageOnRight={true} description={andreaBio} />
+    <StaffMember name="MARCO" image="/lisa.webp" imageOnRight={true} description={marcoBio} />
 
     <div class="h-24 md:h-32 mt-4 md:mt-10 flex flex-row justify-end gap-6">
         <span class="w-3 md:w-10 h-full bg-teal bg-opacity-60"></span>
