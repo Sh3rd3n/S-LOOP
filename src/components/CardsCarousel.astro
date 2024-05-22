@@ -1,39 +1,41 @@
 ---
 ---
 
-<div id="carousel" class="w-full flex items-center md:justify-center gap-6 py-6 overflow-x-auto">
-    <div id='card-1' class='card aspect-4/5 bg-teal ml-6'></div>
-    <div class='card aspect-4/5 bg-teal'></div>
-    <div class='card aspect-4/5 bg-teal mr-6'></div>
+<div id="carousel" class="w-full h-[500px] sm:h-[400px] flex items-center md:justify-center gap-6 py-6 overflow-x-auto">
+    <button class="hidden sm:block bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+        ←
+    </button>
+    <div id='card-1' class='card h-[400px] md:h-[250px] aspect-4/5 bg-teal ml-6'></div>
+    <div id='card-2' class='card h-[300px] aspect-4/5 bg-teal'></div>
+    <div id='card-3' class='card h-[300px] md:h-[250px] aspect-4/5 bg-teal mr-6'></div>
+    <button class="hidden sm:block bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+        →
+    </button>
 </div>
 
-<style>
-    #carousel {
-        height: 500px;
-    }
-
-    .card {
-        height: 300px;
-    }
-
-    #card-1 {
-        height: 400px;
-    }
-</style>
-
-<script>
+<script is:inline>
     const carousel = document.getElementById('carousel');
-    const cards = carousel.getElementsByClassName('card');
+    const cards = carousel.querySelectorAll('.card'); // Use querySelectorAll for better performance
 
-    carousel.addEventListener('scroll', () => {
-        for (const card of cards) {
-            const cardBaseHeight = 300;
-            console.log(cardBaseHeight);
-            const newHeight = Math.round(cardBaseHeight + getVisiblePercentage(card) * 100);
-            console.log(newHeight + "\n\n");
+    function updateCardHeights() {
+        const isMobile = window.innerWidth < 640;
+        const baseHeight = isMobile ? 300 : 250;
+
+        cards.forEach(card => {
+            const isTaller = isMobile ? (card.id === 'card-1') : (card.id === 'card-2');
+            card.style.height = isTaller ? `${baseHeight + 100}px` : `${baseHeight}px`;
+        });
+    }
+
+    function updateCardHeightsOnScroll() {
+        if (window.innerWidth > 640) return; // Only for mobile
+
+        const baseHeight = 300; // Base height for mobile
+        cards.forEach(card => {
+            const newHeight = Math.round(baseHeight + getVisiblePercentage(card) * 100);
             card.style.height = `${newHeight}px`;
-        }
-    });
+        });
+    }
 
     function getVisiblePercentage(element) {
         const rect = element.getBoundingClientRect();
@@ -50,4 +52,8 @@
 
         return vertVisible * horVisible;
     }
+
+    updateCardHeights(); // Initial setup
+    window.addEventListener('resize', updateCardHeights);
+    carousel.addEventListener('scroll', updateCardHeightsOnScroll);
 </script>
