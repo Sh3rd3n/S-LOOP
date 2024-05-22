@@ -1,7 +1,7 @@
 ---
 ---
 
-<div id="carousel" class="w-full h-[500px] sm:h-[400px] flex items-center md:justify-center gap-6 py-6 overflow-x-auto">
+<div id="carousel" class="w-full h-[500px] sm:h-[400px] flex items-center md:justify-center gap-6 py-6 overflow-x-auto sm:overflow-x-hidden">
     <button class="hidden sm:block bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
         ←
     </button>
@@ -31,6 +31,16 @@
         if (window.innerWidth > 640) return; // Only for mobile
 
         const baseHeight = 300; // Base height for mobile
+        cards.forEach(card => {
+            const newHeight = Math.round(baseHeight + getVisiblePercentage(card) * 100);
+            card.style.height = `${newHeight}px`;
+        });
+    }
+
+    function updateCardHeightsOnClick() {
+        if (window.innerWidth < 640) return; // Only for larger screens
+
+        const baseHeight = 250; // Base height for mobile
         cards.forEach(card => {
             const newHeight = Math.round(baseHeight + getVisiblePercentage(card) * 100);
             card.style.height = `${newHeight}px`;
