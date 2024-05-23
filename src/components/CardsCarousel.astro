@@ -1,25 +1,59 @@
 ---
 ---
 
-<div id="carousel" class="w-full h-[500px] sm:h-[400px] flex items-center md:justify-center py-6 overflow-x-auto sm:overflow-x-hidden">
-    <i class="ai-chevron-left-small text-4xl"></i>
-    <div id='card-1' class='card h-[400px] md:h-[250px] aspect-4/5 bg-teal ml-6 md:ml-0'></div>
-    <div id='card-2' class='card h-[300px] aspect-4/5 bg-teal m-6'></div>
-    <div id='card-3' class='card h-[300px] md:h-[250px] aspect-4/5 bg-teal mr-6 md:mr-0'></div>
-    <i class="ai-chevron-right-small text-4xl"></i>
+<div id="carousel"
+     class="w-full h-[500px] sm:h-[350px] lg:h-[500px] flex items-center md:justify-center overflow-x-auto sm:overflow-x-hidden">
+    <svg class="hidden sm:block md:size-10 md:mx-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+         stroke-width="1.5" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="m18.75 4.5-7.5 7.5 7.5 7.5m-6-15L5.25 12l7.5 7.5"/>
+    </svg>
+
+    <div class="flex flex-row justify-center items-center">
+        <div id='card-1' class='card flex justify-center p-6 h-[400px] md:h-[200px] lg:h-[350px] aspect-4/5 bg-teal bg-opacity-60 my-6 mx-3'>
+            <div class="h-full flex flex-col justify-center gap-6">
+                <p class="card-header font-stencil text-2xl self-center">LEZIONI SINGOLE</p>
+                <p class="font-jost text-xl">Durata: 1 ora</p>
+                <p class="font-jost text-xl">Costo: 70€</p>
+                <p class="font-jost">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+            </div>
+        </div>
+
+        <div id='card-2' class='card flex justify-center md:order-first h-[300px] md:h-[250px] lg:h-[450px] aspect-4/5 bg-teal bg-opacity-60 my-6 mx-3'>
+
+        </div>
+
+        <div id='card-3' class='card flex justify-center h-[300px] md:h-[200px] lg:h-[350px] aspect-4/5 bg-teal bg-opacity-60 my-6 mx-3'>
+
+        </div>
+    </div>
+    <svg class="hidden sm:block md:size-10 md:mx-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+         stroke-width="1.5" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="m5.25 4.5 7.5 7.5-7.5 7.5m6-15 7.5 7.5-7.5 7.5"/>
+    </svg>
 </div>
+
+<style>
+    p {
+        font-size: ;
+    }
+</style>
 
 <script is:inline>
     const carousel = document.getElementById('carousel');
     const cards = carousel.querySelectorAll('.card'); // Use querySelectorAll for better performance
 
+    updateCardHeights(); // Initial setup
+    window.addEventListener('resize', updateCardHeights);
+    carousel.addEventListener('scroll', updateCardHeightsOnScroll);
+    cards.forEach(card => {card.addEventListener('click', updateCardHeightsOnClick);});
+
     function updateCardHeights() {
         const isMobile = window.innerWidth < 640;
-        const baseHeight = isMobile ? 300 : 250;
+        const isTablet = window.innerWidth < 1024;
+        const baseHeight = isMobile ? 300 : isTablet ? 200 : 350;
 
         cards.forEach(card => {
-            const isTaller = isMobile ? (card.id === 'card-1') : (card.id === 'card-2');
-            card.style.height = isTaller ? `${baseHeight + 100}px` : `${baseHeight}px`;
+            card.style.height = (card.id === 'card-1') ? `${baseHeight + 100}px` : `${baseHeight}px`;
         });
     }
 
@@ -28,19 +62,25 @@
 
         const baseHeight = 300; // Base height for mobile
         cards.forEach(card => {
+            console.log("Card with id " + card.id + " is " + card.clientWidth + "px wide and " + card.height + "px tall.");
             const newHeight = Math.round(baseHeight + getVisiblePercentage(card) * 100);
             card.style.height = `${newHeight}px`;
         });
     }
 
-    function updateCardHeightsOnClick() {
+    function updateCardHeightsOnClick(event) {
         if (window.innerWidth < 640) return; // Only for larger screens
 
-        const baseHeight = 250; // Base height for mobile
+        const isTablet = window.innerWidth < 1024;
+        const baseHeight = isTablet ? 200 : 350;
+
         cards.forEach(card => {
-            const newHeight = Math.round(baseHeight + getVisiblePercentage(card) * 100);
-            card.style.height = `${newHeight}px`;
+            card.style.height = `${baseHeight}px`;
+            card.style.transition = 'height 0.3s ease';
         });
+
+        const clickedCard = event.currentTarget; // Use currentTarget instead of target
+        clickedCard.style.height = `${baseHeight + 100}px`;
     }
 
     function getVisiblePercentage(element) {
@@ -58,8 +98,4 @@
 
         return vertVisible * horVisible;
     }
-
-    updateCardHeights(); // Initial setup
-    window.addEventListener('resize', updateCardHeights);
-    carousel.addEventListener('scroll', updateCardHeightsOnScroll);
 </script>

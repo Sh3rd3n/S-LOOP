@@ -6,7 +6,7 @@ let spanCount = 14;
 let { header } = Astro.props;
 ---
 
-<section id="courses" class="min-h-screen">
+<section id="courses">
     <div class="overflow-hidden h-24 md:h-32 mt-4 md:mt-10 flex flex-row justify-evenly gap-6">
         {Array.from({length: spanCount}, (_, i) => (
                 <span class={`rotate-30 w-4 md:w-6 h-full bg-teal bg-opacity-60 -z-10 ${i >= 7 ? 'hidden md:inline' : ''}`}></span>
