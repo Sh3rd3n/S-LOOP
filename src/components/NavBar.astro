@@ -9,7 +9,7 @@ const links = Astro.props.links || [];
         </a>
 
         <div class="sr-only md:not-sr-only flex gap-6 lg:gap-10 justify-center items-center">
-            {links.map(link => (
+            {links.map((link: any) => (
                     <a href={link.href} aria-label={`Go to ${link.label} section`} class="text-white md:text-3xl lg:text-4xl">{link.label}</a>
             ))}
         </div>
@@ -32,7 +32,7 @@ const links = Astro.props.links || [];
 
     <div id="mobile-menu" class="hidden md:hidden bg-black bg-opacity-70">
         <div class="gap-2 p-2 flex flex-col animate-fade-down animate-once animate-ease-out">
-            {links.map(link => (
+            {links.map((link: any)  => (
                     <a href={link.href} aria-label={`Go to ${link.label} section`} class="text-white hover:bg-teal hover:text-black block px-3 py-2 text-xl sm:text-2xl font-medium">{link.label}</a>
             ))}
         </div>
