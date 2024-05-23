@@ -9,8 +9,8 @@
     </svg>
 
     <div class="flex flex-row justify-center items-center">
-        <div id='card-1' class='card flex justify-center p-6 h-[400px] md:h-[200px] lg:h-[350px] aspect-4/5 bg-teal bg-opacity-60 my-6 mx-3'>
-            <div class="h-full flex flex-col justify-center gap-6">
+        <div id='card-1' class='card flex justify-center p-6 h-[400px] md:h-[200px] lg:h-[350px] aspect-4/5 bg-teal bg-opacity-60 my-6 ml-6 md:ml-3 mr-3'>
+            <div class="h-full flex flex-col justify-center gap-6 ">
                 <p class="card-header font-stencil text-2xl self-center">LEZIONI SINGOLE</p>
                 <p class="font-jost text-xl">Durata: 1 ora</p>
                 <p class="font-jost text-xl">Costo: 70€</p>
@@ -18,11 +18,11 @@
             </div>
         </div>
 
-        <div id='card-2' class='card flex justify-center md:order-first h-[300px] md:h-[250px] lg:h-[450px] aspect-4/5 bg-teal bg-opacity-60 my-6 mx-3'>
+        <div id='card-2' class='card flex justify-center md:order-first h-[300px] md:h-[250px] lg:h-[450px] aspect-4/5 bg-teal bg-opacity-60 my-6 ml-3 md:ml-6 mr-3'>
 
         </div>
 
-        <div id='card-3' class='card flex justify-center h-[300px] md:h-[200px] lg:h-[350px] aspect-4/5 bg-teal bg-opacity-60 my-6 mx-3'>
+        <div id='card-3' class='card flex justify-center h-[300px] md:h-[200px] lg:h-[350px] aspect-4/5 bg-teal bg-opacity-60 my-6 ml-3 mr-6'>
 
         </div>
     </div>
@@ -32,12 +32,6 @@
     </svg>
 </div>
 
-<style>
-    p {
-        font-size: ;
-    }
-</style>
-
 <script is:inline>
     const carousel = document.getElementById('carousel');
     const cards = carousel.querySelectorAll('.card'); // Use querySelectorAll for better performance
@@ -45,7 +39,9 @@
     updateCardHeights(); // Initial setup
     window.addEventListener('resize', updateCardHeights);
     carousel.addEventListener('scroll', updateCardHeightsOnScroll);
-    cards.forEach(card => {card.addEventListener('click', updateCardHeightsOnClick);});
+    cards.forEach(card => {
+        card.addEventListener('click', updateCardHeightsOnClick);
+    });
 
     function updateCardHeights() {
         const isMobile = window.innerWidth < 640;
@@ -61,8 +57,8 @@
         if (window.innerWidth > 640) return; // Only for mobile
 
         const baseHeight = 300; // Base height for mobile
+
         cards.forEach(card => {
-            console.log("Card with id " + card.id + " is " + card.clientWidth + "px wide and " + card.height + "px tall.");
             const newHeight = Math.round(baseHeight + getVisiblePercentage(card) * 100);
             card.style.height = `${newHeight}px`;
         });
