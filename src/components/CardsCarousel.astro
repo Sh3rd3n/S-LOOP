@@ -3,95 +3,55 @@
 
 <div id="carousel"
      class="w-full h-[500px] sm:h-[350px] lg:h-[500px] flex items-center md:justify-center overflow-x-auto sm:overflow-x-hidden">
-    <svg class="hidden sm:block md:size-10 md:mx-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-         stroke-width="1.5" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" d="m18.75 4.5-7.5 7.5 7.5 7.5m-6-15L5.25 12l7.5 7.5"/>
-    </svg>
-
-    <div class="flex flex-row justify-center items-center">
-        <div id='card-1' class='card flex justify-center p-6 h-[400px] md:h-[200px] lg:h-[350px] aspect-4/5 bg-teal bg-opacity-60 my-6 ml-6 md:ml-3 mr-3'>
-            <div class="h-full flex flex-col justify-center gap-6 ">
-                <p class="card-header font-stencil text-2xl self-center">LEZIONI SINGOLE</p>
-                <p class="font-jost text-xl">Durata: 1 ora</p>
-                <p class="font-jost text-xl">Costo: 70€</p>
-                <p class="font-jost">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+    <div class="flex flex-row justify-center items-center gap-6 sm:gap-10 lg:gap-16 mx-6">
+        <div class='card p-6 w-80 sm:w-52 lg:w-72 sm:scale-125 aspect-4/5 flex justify-center bg-teal bg-opacity-60 transition duration-500 sm:cursor-pointer'>
+            <div class="container flex flex-col justify-center gap-6">
+                <p class="card-header self-center font-stencil text-3xl sm:text-lg lg:text-2xl">LEZIONI SINGOLE</p>
+                <p class="font-jost text-2xl sm:text-xs lg:text-xl">Durata: 1 ora</p>
+                <p class="font-jost text-2xl sm:text-xs lg:text-xl">Costo: 70€</p>
+                <p class="font-jost sm:text-xs lg:text-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
             </div>
         </div>
 
-        <div id='card-2' class='card flex justify-center md:order-first h-[300px] md:h-[250px] lg:h-[450px] aspect-4/5 bg-teal bg-opacity-60 my-6 ml-3 md:ml-6 mr-3'>
-
+        <div class='card p-6 w-80 sm:w-52 lg:w-72 aspect-4/5 flex justify-center sm:order-first bg-teal bg-opacity-60 transition duration-500 sm:cursor-pointer'>
+            <div class="container flex flex-col justify-center gap-6">
+                <p class="card-header self-center font-stencil text-3xl sm:text-lg lg:text-2xl">SURF CAMP</p>
+                <p class="font-jost text-2xl sm:text-xs lg:text-xl">Durata: 7 giorni</p>
+                <p class="font-jost text-2xl sm:text-xs lg:text-xl">Costo: 700€</p>
+                <p class="font-jost sm:text-xs lg:text-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+            </div>
         </div>
 
-        <div id='card-3' class='card flex justify-center h-[300px] md:h-[200px] lg:h-[350px] aspect-4/5 bg-teal bg-opacity-60 my-6 ml-3 mr-6'>
-
+        <div class='card p-6 w-80 sm:w-52 lg:w-72 aspect-4/5 flex justify-center bg-teal bg-opacity-60 transition duration-500 sm:cursor-pointer'>
+            <div class="container flex flex-col justify-center gap-6">
+                <p class="card-header self-center font-stencil text-3xl sm:text-lg lg:text-2xl">CERTIFICAZIONE</p>
+                <p class="font-jost text-2xl sm:text-xs lg:text-xl">Durata: ND giorni</p>
+                <p class="font-jost text-2xl sm:text-xs lg:text-xl">Costo: ND€</p>
+                <p class="font-jost sm:text-xs lg:text-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+            </div>
         </div>
     </div>
-    <svg class="hidden sm:block md:size-10 md:mx-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-         stroke-width="1.5" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" d="m5.25 4.5 7.5 7.5-7.5 7.5m6-15 7.5 7.5-7.5 7.5"/>
-    </svg>
 </div>
 
 <script is:inline>
     const carousel = document.getElementById('carousel');
     const cards = carousel.querySelectorAll('.card'); // Use querySelectorAll for better performance
-
-    updateCardHeights(); // Initial setup
-    window.addEventListener('resize', updateCardHeights);
-    carousel.addEventListener('scroll', updateCardHeightsOnScroll);
+    
     cards.forEach(card => {
         card.addEventListener('click', updateCardHeightsOnClick);
     });
 
-    function updateCardHeights() {
-        const isMobile = window.innerWidth < 640;
-        const isTablet = window.innerWidth < 1024;
-        const baseHeight = isMobile ? 300 : isTablet ? 200 : 350;
-
-        cards.forEach(card => {
-            card.style.height = (card.id === 'card-1') ? `${baseHeight + 100}px` : `${baseHeight}px`;
-        });
-    }
-
-    function updateCardHeightsOnScroll() {
-        if (window.innerWidth > 640) return; // Only for mobile
-
-        const baseHeight = 300; // Base height for mobile
-
-        cards.forEach(card => {
-            const newHeight = Math.round(baseHeight + getVisiblePercentage(card) * 100);
-            card.style.height = `${newHeight}px`;
-        });
-    }
-
     function updateCardHeightsOnClick(event) {
         if (window.innerWidth < 640) return; // Only for larger screens
 
-        const isTablet = window.innerWidth < 1024;
-        const baseHeight = isTablet ? 200 : 350;
-
         cards.forEach(card => {
-            card.style.height = `${baseHeight}px`;
-            card.style.transition = 'height 0.3s ease';
+            card.classList.remove('sm:scale-125');
         });
 
-        const clickedCard = event.currentTarget; // Use currentTarget instead of target
-        clickedCard.style.height = `${baseHeight + 100}px`;
-    }
-
-    function getVisiblePercentage(element) {
-        const rect = element.getBoundingClientRect();
-        const windowHeight = (window.innerHeight || document.documentElement.clientHeight);
-        const windowWidth = (window.innerWidth || document.documentElement.clientWidth);
-
-        const vertInView = (rect.top <= windowHeight) && ((rect.top + rect.height) >= 0);
-        const horInView = (rect.left <= windowWidth) && ((rect.left + rect.width) >= 0);
-
-        const vertVisible = vertInView
-            ? ((Math.min(rect.top + rect.height, windowHeight) - Math.max(rect.top, 0)) / rect.height) : 0;
-        const horVisible = horInView
-            ? ((Math.min(rect.left + rect.width, windowWidth) - Math.max(rect.left, 0)) / rect.width) : 0;
-
-        return vertVisible * horVisible;
+        const clickedCard = event.currentTarget;
+        clickedCard.classList.add('sm:scale-125');
     }
 </script>
