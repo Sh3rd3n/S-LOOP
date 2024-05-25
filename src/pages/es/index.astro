@@ -6,6 +6,7 @@ import SchoolSection from '../../components/School.astro';
 import WhoAreWeSection from '../../components/WhoAreWe.astro';
 import CoursesSection from '../../components/Courses.astro';
 import PurchaseAndRentalSection from '../../components/PurchaseAndRental.astro';
+import GallerySection from "../../components/Gallery.astro";
 import ContactsSection from '../../components/Contacts.astro';
 ---
 
@@ -15,6 +16,7 @@ import ContactsSection from '../../components/Contacts.astro';
         { href: "#who-are-we", label: "QUIÉNES SOMOS" },
         { href: "#courses", label: "CURSOS" },
         { href: "#purchase-and-rental", label: "COMPRA Y ALQUILER" },
+        {href: "#gallery", label: "GALERÍA"},
         { href: "#contacts", label: "CONTACTOS" }
     ]} />
 
@@ -42,9 +44,16 @@ import ContactsSection from '../../components/Contacts.astro';
 
     <CoursesSection
         header="CURSOS"
+        cards={[
+            {title: "LECCIÓN INDIVIDUAL", duration: "1 hora", cost: "70€", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.", scaled: true, first: false},
+            {title: "SURF CAMP", duration: "7 días", cost: "700€", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.", scaled: false, first: true},
+            {title: "CERTIFICACIÓN", duration: "ND días", cost: "ND€", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.", scaled: false, first: false}
+        ]}
     />
 
     <PurchaseAndRentalSection />
+
+    <GallerySection />
 
     <ContactsSection />
 </Layout>

@@ -10,7 +10,7 @@ const links = Astro.props.links || [];
 
         <div class="sr-only md:not-sr-only flex gap-6 lg:gap-10 justify-center items-center">
             {links.map((link: any) => (
-                    <a href={link.href} aria-label={`Go to ${link.label} section`} class="text-white md:text-3xl lg:text-4xl">{link.label}</a>
+                    <a href={link.href} aria-label={`Go to ${link.label} section`} class="text-white md:text-2xl lg:text-4xl">{link.label}</a>
             ))}
         </div>
 

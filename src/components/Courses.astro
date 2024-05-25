@@ -3,7 +3,7 @@ import TextParagraph from "./TextParagraph.astro";
 import CardsCarousel from "./CardsCarousel.astro";
 let spanCount = 14;
 
-let { header } = Astro.props;
+let { header, cards } = Astro.props;
 ---
 
 <section id="courses">
@@ -21,5 +21,5 @@ let { header } = Astro.props;
 
     <img src="/kites.webp" class="w-full object-cover max-h-80 mt-6" alt="Kiters surfing on a beautiful sea" />
 
-    <CardsCarousel />
+    <CardsCarousel cards={cards} />
 </section>
