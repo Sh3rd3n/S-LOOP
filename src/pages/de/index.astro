@@ -15,7 +15,7 @@ import ContactsSection from '../../components/Contacts.astro';
         { href: "#school", label: "SCHULE" },
         { href: "#who-are-we", label: "WER WIR SIND" },
         { href: "#courses", label: "KURSE" },
-        { href: "#purchase-and-rental", label: "KAUF UND VERMIETUNG" },
+        { href: "#purchase-and-rental", label: "VERMIETUNG" },
         { href: "#gallery", label: "GALERIE" },
         { href: "#contacts", label: "KONTAKTE" }
     ]} />
@@ -51,7 +51,10 @@ import ContactsSection from '../../components/Contacts.astro';
         ]}
     />
 
-    <PurchaseAndRentalSection />
+    <PurchaseAndRentalSection
+            header = "VERMIETUNG"
+            description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut lectus nibh. Donec auctor augue vitae eros tempor tristique. Duis vulputate massa ut magna laoreet, nec gravida sem hendrerit. Nunc pulvinar iaculis odio cursus cursus. Ut justo sapien, lacinia ullamcorper tellus vel, accumsan faucibus leo. Curabitur sit amet varius augue. Aliquam egestas ligula faucibus lectus ultricies, in tristique purus sodales. Praesent gravida tristique diam, vel sodales quam euismod in. Etiam justo urna, suscipit vitae lacus vitae, ornare facilisis dui. "
+    />
 
     <GallerySection />
 
