@@ -6,7 +6,7 @@ import SchoolSection from '../components/School.astro';
 import WhoAreWeSection from '../components/WhoAreWe.astro';
 import CoursesSection from '../components/Courses.astro';
 import PurchaseAndRentalSection from '../components/PurchaseAndRental.astro';
-import GallerySection from '../components/Gallery.astro';
+import MomentsSection from '../components/Moments.astro';
 import ContactsSection from '../components/Contacts.astro';
 ---
 
@@ -16,7 +16,7 @@ import ContactsSection from '../components/Contacts.astro';
         {href: "#who-are-we", label: "CHI SIAMO"},
         {href: "#courses", label: "CORSI"},
         {href: "#purchase-and-rental", label: "NOLEGGIO"},
-        {href: "#gallery", label: "GALLERIA"},
+        {href: "#moments", label: "MOMENTI"},
         {href: "#contacts", label: "CONTATTI"}
     ]}/>
 
@@ -37,7 +37,7 @@ import ContactsSection from '../components/Contacts.astro';
             header="CHI SIAMO"
             paragraph1="<strong>Alla <span class='text-nowrap'>S-Loop</span> siamo più che un team.</strong>"
             paragraph2="Chi frequenta la nostra scuola sa di trovare non solo un ambiente all’avanguardia nelle tecniche di insegnamento, ma dei veri e propri amici e persone di fiducia."
-            cristianBio="<p><strong>Cristian Jesùs Cancino Mondaca,</strong> fondatore della scuola <span class='text-nowrap'>S-Loop</span>, è veterano degli sport acquatici, con <strong>oltre 10 anni di esperienza</strong> che testimoniano la sua dedizione e amore per il Kitesurf.</p><br><p>La scuola di Cristian è il frutto del suo impegno nel voler condividere la sua passione con altri appassionati. Il suo metodo di insegnamento mira a essere divertente, dinamico e soprattutto efficace, permettendo agli studenti di imparare rapidamente e in completa sicurezza.</p>"
+            cristianBio="<strong>Cristian Jesùs Cancino Mondaca,</strong> fondatore della scuola <span class='text-nowrap'>S-Loop</span>, è veterano degli sport acquatici, con <strong>oltre 10 anni di esperienza</strong> che testimoniano la sua dedizione e amore per il Kitesurf.<br><br>La scuola di Cristian è il frutto del suo impegno nel voler condividere la sua passione con altri appassionati. Il suo metodo di insegnamento mira a essere divertente, dinamico e soprattutto efficace, permettendo agli studenti di imparare rapidamente e in completa sicurezza."
             marcoBio="Marco è un istruttore di kitesurf con oltre 5 anni di esperienza. Ha iniziato a insegnare in Italia, per poi trasferirsi in Australia, dove ha lavorato come istruttore e gestore di scuola. Tornato in Italia, ha fondato la S-Loop Kiteboarding School insieme a Cristian, con l’obiettivo di creare un ambiente accogliente e professionale per gli appassionati di sport acquatici."
             lisaBio="Lisa è un’istruttrice di kitesurf con oltre 5 anni di esperienza. Ha iniziato a insegnare in Italia, per poi trasferirsi in Australia, dove ha lavorato come istruttrice e gestore di scuola. Tornata in Italia, ha fondato la S-Loop Kiteboarding School insieme a Cristian e Andrea, con l’obiettivo di creare un ambiente accogliente e professionale per gli appassionati di sport acquatici."
     />
@@ -45,18 +45,39 @@ import ContactsSection from '../components/Contacts.astro';
     <CoursesSection
             header="CORSI"
             cards={[
-                {title: "LEZIONE SINGOLA", duration: "1 ora", cost: "70€", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.", scaled: true, first: false},
-                {title: "SURF CAMP", duration: "7 giorni", cost: "700€", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.", scaled: false, first: true},
-                {title: "CERTIFICAZIONE", duration: "ND giorni", cost: "ND€", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.", scaled: false, first: false}
+                {
+                    title: "LEZIONE SINGOLA",
+                    duration: "1 ora",
+                    cost: "70€",
+                    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+                    scaled: true,
+                    first: false
+                },
+                {
+                    title: "SURF CAMP",
+                    duration: "7 giorni",
+                    cost: "700€",
+                    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+                    scaled: false,
+                    first: true
+                },
+                {
+                    title: "CERTIFICAZIONE",
+                    duration: "ND giorni",
+                    cost: "ND€",
+                    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+                    scaled: false,
+                    first: false
+                }
             ]}
     />
 
     <PurchaseAndRentalSection
-            header = "NOLEGGIO"
-            description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut lectus nibh. Donec auctor augue vitae eros tempor tristique. Duis vulputate massa ut magna laoreet, nec gravida sem hendrerit. Nunc pulvinar iaculis odio cursus cursus. Ut justo sapien, lacinia ullamcorper tellus vel, accumsan faucibus leo. Curabitur sit amet varius augue. Aliquam egestas ligula faucibus lectus ultricies, in tristique purus sodales. Praesent gravida tristique diam, vel sodales quam euismod in. Etiam justo urna, suscipit vitae lacus vitae, ornare facilisis dui. "
+            header="NOLEGGIO"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut lectus nibh. Donec auctor augue vitae eros tempor tristique. Duis vulputate massa ut magna laoreet, nec gravida sem hendrerit. Nunc pulvinar iaculis odio cursus cursus. Ut justo sapien, lacinia ullamcorper tellus vel, accumsan faucibus leo. Curabitur sit amet varius augue. Aliquam egestas ligula faucibus lectus ultricies, in tristique purus sodales. Praesent gravida tristique diam, vel sodales quam euismod in. Etiam justo urna, suscipit vitae lacus vitae, ornare facilisis dui. "
     />
 
-    <GallerySection />
+    <MomentsSection/>
 
     <ContactsSection/>
 </Layout>
