@@ -16,23 +16,11 @@ export default {
 			keyframes: {
 				'shrink-navbar': {
 					'0%': {'background-color': 'rgba(0, 0, 0, 0)' },
-					'100%': {
-						'background-color': 'rgba(0, 0, 0, 0.7)',
-						'padding-top': '1rem',
-						'padding-bottom': '1rem'
-					}
+					'100%': {'background-color': 'rgba(0, 0, 0, 0.85)',}
 				},
 				'expand-navbar': {
-					'0%': {
-						'background-color': 'rgba(0, 0, 0, 0.7)',
-						'padding-top': '1rem',
-						'padding-bottom': '1rem'
-					},
-					'100%': {
-						'background-color': 'rgba(0, 0, 0, 0)',
-						'padding-top': '2.5rem',
-						'padding-bottom': '2.5rem'
-					}
+					'0%': {'background-color': 'rgba(0, 0, 0, 0.85)',},
+					'100%': {'background-color': 'rgba(0, 0, 0, 0)',}
 				},
 			},
 			animation: {

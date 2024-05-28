@@ -2,70 +2,114 @@
 const links = Astro.props.links || [];
 ---
 
-<nav class="z-40 fixed w-full top-0 font-light">
-    <div id="nav-header" class="p-10 flex flex-row justify-between items-center md:after:content-['']">
-        <a href="#hero" aria-label="Go to Home section">
-            <img id="school-logo" src="/sloop-logo.webp" alt="S-LOOP Kiteboarding School" class="transition-all duration-500 w-24 h-24 lg:w-32 lg:h-32"/>
+<nav class="fixed z-20 w-full">
+    <div id="nav-header" class="flex justify-between items-center">
+        <a href="#hero" aria-label="Go to hero section" class="w-44 md:w-36 lg:w-44 flex justify-center items-center">
+            <img id="school-logo" class="h-44 md:h-36 lg:h-44 aspect-square p-10 md:p-8 lg:p-10 transition-all duration-500" src="/sloop-logo.webp" alt="S-LOOP Kiteboarding School"/>
         </a>
 
-        <div class="sr-only md:not-sr-only flex gap-6 lg:gap-10 justify-center items-center">
-            {links.map((link: any) => (
-                    <a href={link.href} aria-label={`Go to ${link.label} section`} class="text-white md:text-2xl lg:text-4xl">{link.label}</a>
-            ))}
+        <div id="links-bar" class="hidden md:flex justify-center items-center gap-6 lg:gap-10">
+            {links.map((link: any) => (<a href={link.href} aria-label={`Go to ${link.label} section`} class="font-light text-white md:text-2xl lg:text-3xl whitespace-nowrap">{link.label}</a>))}
         </div>
 
-        <button id="mobile-menu-button" type="button" class="md:hidden h-8 w-10 text-white group" role="switch" aria-checked="false" aria-label="Toggle mobile menu">
-            <span class="relative flex overflow-hidden items-center justify-center size-full transform transition-all duration-200">
-                <span class="flex flex-col justify-between size-full transform transition-all duration-300 origin-center overflow-hidden">
-                    <span class="bg-white h-0.5 w-10 transform transition-all duration-300 origin-left group-aria-checked:translate-y-10 delay-100"></span>
-                    <span class="bg-white h-0.5 w-10 rounded transform transition-all duration-300 group-aria-checked:translate-y-10 delay-75"></span>
-                    <span class="bg-white h-0.5 w-10 transform transition-all duration-300 origin-left group-aria-checked:translate-y-10"></span>
+        <div class="md:hidden flex justify-center items-center w-28 lg:w-44">
+            <button id="mobile-menu-button" type="button" class="h-8 w-10 text-white group" role="switch" aria-checked="false" aria-label="Toggle mobile menu">
+                <span class="relative flex overflow-hidden items-center justify-center size-full transform transition-all duration-200">
+                    <span class="flex flex-col justify-between size-full transform transition-all duration-300 origin-center overflow-hidden">
+                        <span class="bg-white h-0.5 w-10 transform transition-all duration-300 origin-left group-aria-checked:translate-y-10 delay-100"></span>
+                        <span class="bg-white h-0.5 w-10 rounded transform transition-all duration-300 group-aria-checked:translate-y-10 delay-75"></span>
+                        <span class="bg-white h-0.5 w-10 transform transition-all duration-300 origin-left group-aria-checked:translate-y-10"></span>
 
-                    <span class="absolute flex items-center justify-between pt-4 transform transition-all duration-500 -translate-x-12 group-aria-checked:translate-x-0">
-                        <span class="absolute bg-white h-0.5 w-10 transform transition-all duration-500 rotate-0 delay-300 group-aria-checked:rotate-45"></span>
-                        <span class="absolute bg-white h-0.5 w-10 transform transition-all duration-500 -rotate-0 delay-300 group-aria-checked:-rotate-45"></span>
+                        <span class="absolute flex items-center justify-between pt-4 transform transition-all duration-500 -translate-x-12 group-aria-checked:translate-x-0">
+                            <span class="absolute bg-white h-0.5 w-10 transform transition-all duration-500 rotate-0 delay-300 group-aria-checked:rotate-45"></span>
+                            <span class="absolute bg-white h-0.5 w-10 transform transition-all duration-500 -rotate-0 delay-300 group-aria-checked:-rotate-45"></span>
+                        </span>
                     </span>
                 </span>
-            </span>
-        </button>
+            </button>
+        </div>
+
+        <div id="placeholder" class="hidden md:block size-44 md:size-36 lg:size-44"></div>
     </div>
 
-    <div id="mobile-menu" class="hidden md:hidden bg-black bg-opacity-70">
-        <div class="gap-2 p-2 flex flex-col animate-fade-down animate-once animate-ease-out">
-            {links.map((link: any)  => (
-                    <a href={link.href} aria-label={`Go to ${link.label} section`} class="text-white hover:bg-teal hover:text-black block px-3 py-2 text-xl sm:text-2xl font-medium">{link.label}</a>
+    <div id="mobile-menu" class="hidden md:hidden bg-black bg-opacity-85">
+        <div class="flex flex-col gap-2 p-2">
+            {links.map((link: any) => (
+                    <a href={link.href} aria-label={`Go to ${link.label} section`}
+                       class="block px-3 py-2 text-white hover:text-black text-xl sm:text-2xl font-medium hover:bg-teal animate-fade-down animate-once animate-ease-out">
+                        {link.label}
+                    </a>
             ))}
         </div>
     </div>
 </nav>
 
-
 <script is:inline>
+    let scrolled = false;
+    let menuOpen = false;
+
+    const baseLogoSize= "h-44 md:h-36 lg:h-44 p-10 md:p-8 lg:p-10"
+    const smallLogoSize = "h-20 md:h-16 lg:h-24 p-2 md:p-1 lg:p-2" // Change the menu size when the user scrolls
+
     const navHeader = document.getElementById('nav-header');
     const navMenu = document.getElementById("mobile-menu");
     const button = document.getElementById('mobile-menu-button');
     const logo = document.getElementById('school-logo');
+    const links = navHeader.querySelectorAll('a');
+    const placeholder = document.getElementById('placeholder');
 
-    const scrollClasses = {
-        true: ['w-20', 'h-20', 'lg:w-24', 'lg:h-24'],
-        false: ['w-24', 'h-24', 'lg:w-32', 'lg:h-32']
-    };
+    function toggleButtonState(button) {
+        const isChecked = button.getAttribute('aria-checked') === 'true';
+        button.setAttribute('aria-checked', isChecked ? 'false' : 'true');
+        document.body.style.overflow = isChecked ? 'auto' : 'hidden';
+    }
 
-    const allClasses = [...scrollClasses.true, ...scrollClasses.false];
+    function closeMenu(button) {
+        toggleButtonState(button);
+        navHeader.classList.remove('!bg-black', '!bg-opacity-85');
+        navMenu.classList.add('hidden');
+        menuOpen = false;
+    }
 
-    button.addEventListener('click', function() {
-        this.setAttribute('aria-checked', this.getAttribute('aria-checked') === 'true' ? 'false' : 'true');
-        navHeader.classList.toggle('!bg-black');
-        navHeader.classList.toggle('!bg-opacity-70');
-        navMenu.classList.toggle('hidden');
-        document.body.style.overflow = this.getAttribute('aria-checked') === 'true' ? 'hidden' : 'auto';
+    function openMenu(button) {
+        toggleButtonState(button);
+        navHeader.classList.add('!bg-black', '!bg-opacity-85');
+        navMenu.classList.remove('hidden');
+        menuOpen = true;
+    }
+
+    function handleScroll(isScrolled) {
+        navHeader.classList.toggle('animate-shrink-navbar', isScrolled);
+        navHeader.classList.toggle('animate-expand-navbar', !isScrolled);
+        scrolled = isScrolled;
+    }
+
+    function updateHeaderSize() {
+        const classListToRemove = scrolled ? baseLogoSize : smallLogoSize;
+        const classListToAdd = scrolled ? smallLogoSize : baseLogoSize;
+
+        classListToRemove.split(" ").forEach(cls => {
+            logo.classList.remove(cls);
+            placeholder.classList.remove(cls);
+        });
+
+        classListToAdd.split(" ").forEach(cls => {
+            logo.classList.add(cls);
+            placeholder.classList.add(cls);
+        });
+    }
+
+    button.addEventListener('click', function () {
+        menuOpen ? closeMenu(this) : openMenu(this);
     });
 
     window.addEventListener('scroll', () => {
-        const isScrolled = window.scrollY > 0;
-        navHeader.classList.toggle('animate-shrink-navbar', isScrolled);
-        navHeader.classList.toggle('animate-expand-navbar', !isScrolled);
-        allClasses.forEach(cls => logo.classList.remove(cls));
-        scrollClasses[isScrolled].forEach(cls => logo.classList.add(cls));
+        handleScroll(window.scrollY > 0)
+        updateHeaderSize();
+    });
+
+    document.addEventListener('click', (event) => {
+        if (menuOpen && !navHeader.contains(event.target))
+            closeMenu(button);
     });
 </script>

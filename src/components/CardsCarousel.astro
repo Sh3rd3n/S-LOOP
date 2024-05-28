@@ -4,7 +4,7 @@ let cards = Astro.props.cards;
 
 <div id="carousel" class="w-full h-full py-10 md:py-20 flex items-center md:justify-center overflow-x-auto sm:overflow-x-hidden">
     <div class="flex flex-row justify-center items-center gap-6 sm:gap-10 lg:gap-16 mx-6">
-        {cards.map(card => (
+        {cards.map((card : any) => (
                 <div class={`card p-6 w-80 sm:w-52 lg:w-72 aspect-4/5 flex justify-center bg-teal bg-opacity-60 transition duration-500 sm:cursor-pointer ${card.scaled ? 'sm:scale-125' : ''}  ${card.first ? 'sm:order-first' : ''}`}>
                     <div class="container flex flex-col justify-center gap-8 sm:gap-4 lg:gap-6">
                         <p class="self-center font-stencil text-2xl sm:text-sm lg:text-xl scale-110 lg:scale-100">{card.title}</p>

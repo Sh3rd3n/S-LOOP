@@ -2,7 +2,7 @@
 let header = "MOMENTI"
 ---
 
-<section id="moments" class="bg-teal bg-opacity-50 mt-20 pb-4 sm:pb-10 px-10 xl:px-72 ">
+<section id="moments" class="bg-gradient-to-b from-teal bg-opacity-50 mt-20 pb-4 sm:pb-10 px-10 xl:px-72 ">
     <h2 class="py-4 sm:py-10 font-stencil font-normal text-6xl md:text-7xl w-full text-left md:text-center">{header}</h2>
 
     <div class="container w-full grid grid-cols-3 lg:grid-cols-4 row-4 lg:row-5 gap-2 lg:gap-4">
@@ -44,81 +44,68 @@ let header = "MOMENTI"
         <div class="size-full aspect-square overflow-hidden lg:col-span-2 lg:row-span-2">
             <img loading="lazy" alt="moments"
                  class="size-full aspect-square object-cover object-center transform transition duration-500 hover:scale-110 hover:cursor-pointer"
-                 src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(70).webp"/>
+                 src="/sloop-logo.webp"/>
         </div>
         <div class="size-full aspect-square overflow-hidden">
             <img loading="lazy" alt="moments"
                  class="size-full aspect-square object-cover object-center transform transition duration-500 hover:scale-110 hover:cursor-pointer"
-                 src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(70).webp"/>
+                 src="/kiter.webp"/>
         </div>
         <div class="size-full aspect-square overflow-hidden">
             <img loading="lazy" alt="moments"
                  class="size-full aspect-square object-cover object-center transform transition duration-500 hover:scale-110 hover:cursor-pointer"
-                 src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(70).webp"/>
+                 src="/kite-rental.webp"/>
         </div>
         <div class="size-full aspect-square overflow-hidden lg:hidden">
             <img loading="lazy" alt="moments"
                  class="size-full aspect-square object-cover object-center transform transition duration-500 hover:scale-110 hover:cursor-pointer"
-                 src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(70).webp"/>
+                 src="/lisa.webp"/>
         </div>
         <div class="size-full aspect-square overflow-hidden lg:hidden">
             <img loading="lazy" alt="moments"
                  class="size-full aspect-square object-cover object-center transform transition duration-500 hover:scale-110 hover:cursor-pointer"
-                 src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(70).webp"/>
+                 src="/cristian.webp"/>
         </div>
     </div>
 
-    <div id="img-modal" class="relative z-50 transition-opacity duration-300 ease-in-out opacity-0 hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-        <div class="fixed inset-0 backdrop-blur-lg bg-gray-500 bg-opacity-75 transition-opacity"></div>
+    <div id="gallery-modal" class="relative h-screen w-screen hidden z-40" aria-labelledby="modal-title" role="dialog"
+         aria-modal="true">
+        <div class="fixed inset-0 backdrop-blur-lg bg-gray-500 bg-opacity-75">
+            <div class="z-50 size-full inset-0 flex justify-center items-center overflow-y-auto">
+                <svg class="fixed right-5 top-5 size-10 hover:cursor-pointer" fill="none" viewBox="0 0 24 24"
+                     stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
 
-        <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
-            <svg class="fixed right-5 top-5 size-10 hover:cursor-pointer"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-            </svg>
-
-            <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
-
-                <div class="relative transform overflow-hidden bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-sm sm:p-6">
-                    <div>
-                        <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-green-100">
-                            <svg class="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                            </svg>
-                        </div>
-                        <div class="mt-3 text-center sm:mt-5">
-                            <h3 class="text-base font-semibold leading-6 text-gray-900" id="modal-title">Payment successful</h3>
-                            <div class="mt-2">
-                                <p class="text-sm text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur amet labore.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mt-5 sm:mt-6">
-                        <button type="button" class="inline-flex w-full justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Go back to dashboard</button>
-                    </div>
-                </div>
+                <img id="modal-img" class="object-scale-down object-center max-h-screen p-16" src=""
+                     alt="Modal Caption">
             </div>
         </div>
     </div>
 </section>
 
 <script>
-    const modal = document.getElementById('img-modal');
-    const close = document.querySelector('svg');
+    const gallery = document.getElementById('moments') as HTMLElement;
+    const images = gallery.querySelectorAll('img');
+    const modal = document.getElementById('gallery-modal') as HTMLElement;
+    const close = modal.querySelector('svg') as SVGElement;
     const body = document.body;
 
     close.addEventListener('click', () => {
-        modal.classList.remove('opacity-100');
-        modal.classList.add('opacity-0');
         body.classList.remove('overflow-hidden'); // Enable scrolling
-        setTimeout(() => modal.classList.add('hidden'), 500);
+        modal.classList.add('hidden');
     });
 
-    const images = document.querySelectorAll('img');
-    images.forEach(image => {
+    images.forEach((image: HTMLImageElement) => {
         image.addEventListener('click', () => {
+            // Get the image element of modal
+            let modalImg = document.getElementById('modal-img') as HTMLImageElement;
+            // Assign the source of the clicked image to the modal image
+            modalImg.src = image.src;
+
+            // Make modal visible and disable body scrolling
             modal.classList.remove('hidden');
-            body.classList.add('overflow-hidden'); // Disable scrolling
-            setTimeout(() => modal.classList.add('opacity-100'), 50);
+            body.classList.add('overflow-hidden');
         });
     });
 </script>
