@@ -68,11 +68,7 @@ let header = "MOMENTI"
         </div>
     </div>
 
-<<<<<<< HEAD
     <div id="gallery-modal" class="relative h-screen w-screen hidden z-40" aria-labelledby="modal-title" role="dialog"
-=======
-    <div id="img-modal" class="relative h-screen w-screen hidden z-40" aria-labelledby="modal-title" role="dialog"
->>>>>>> 5f248293dc57429e9b17715d41c33e9f88db7a03
          aria-modal="true">
         <div class="fixed inset-0 backdrop-blur-lg bg-gray-500 bg-opacity-75">
             <div class="z-50 size-full inset-0 flex justify-center items-center overflow-y-auto">
@@ -89,15 +85,10 @@ let header = "MOMENTI"
 </section>
 
 <script>
-<<<<<<< HEAD
     const gallery = document.getElementById('moments') as HTMLElement;
     const images = gallery.querySelectorAll('img');
     const modal = document.getElementById('gallery-modal') as HTMLElement;
     const close = modal.querySelector('svg') as SVGElement;
-=======
-    let modal = document.getElementById('img-modal') as HTMLElement;
-    const close = document.querySelector('svg') as SVGElement;
->>>>>>> 5f248293dc57429e9b17715d41c33e9f88db7a03
     const body = document.body;
 
     close.addEventListener('click', () => {
@@ -105,10 +96,6 @@ let header = "MOMENTI"
         modal.classList.add('hidden');
     });
 
-<<<<<<< HEAD
-=======
-    const images = document.querySelectorAll('img');
->>>>>>> 5f248293dc57429e9b17715d41c33e9f88db7a03
     images.forEach((image: HTMLImageElement) => {
         image.addEventListener('click', () => {
             // Get the image element of modal
