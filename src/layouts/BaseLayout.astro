@@ -4,7 +4,7 @@ const { title } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="it" class="scroll-smooth scroll-pt-20 md:scroll-pt-16 lg:scroll-pt-24">
+<html lang="it" class="scroll-smooth scroll-pt-20 md:scroll-pt-16 lg:scroll-pt-24 scrollbar-hide">
 	<head>
 		<meta name="author" content="Luca Derosas & Veronica Vacca" />
 		<meta charset="UTF-8" />
@@ -60,3 +60,16 @@ const { title } = Astro.props;
 		<slot />
 	</body>
 </html>
+
+<style>
+	/* Hide scrollbar for Chrome, Safari and Opera */
+	.scrollbar-hide::-webkit-scrollbar {
+		display: none;
+	}
+
+	/* Hide scrollbar for IE, Edge and Firefox */
+	.scrollbar-hide {
+		-ms-overflow-style: none;  /* IE and Edge */
+		scrollbar-width: none;  /* Firefox */
+	}
+</style>

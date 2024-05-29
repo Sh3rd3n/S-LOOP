@@ -14,6 +14,10 @@ export default {
 				'teal': '#0BFCE1'
 			},
 			keyframes: {
+				'fade-in': {
+					'0%': { opacity: '0' },
+					'100%': { opacity: '1' },
+				},
 				'shrink-navbar': {
 					'0%': {'background-color': 'rgba(0, 0, 0, 0)' },
 					'100%': {'background-color': 'rgba(0, 0, 0, 0.85)',}
@@ -26,6 +30,7 @@ export default {
 			animation: {
 				'shrink-navbar': 'shrink-navbar 0.3s linear forwards',
 				'expand-navbar': 'expand-navbar 0.3s linear forwards',
+				'fade-in': 'fade-in linear',
 			},
 		},
 		rotate: {
@@ -38,6 +43,6 @@ export default {
 		},
 	},
 	plugins: [
-		require('tailwindcss-animated')
+		require('tailwindcss-animated'),
 	],
 }
