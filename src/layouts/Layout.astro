@@ -1,11 +1,13 @@
 ---
 import '../styles/global.css';
+import GoogleAnalytics from '../components/GoogleAnalytics.astro';
 const { title } = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="it" class="scroll-smooth scroll-pt-20 md:scroll-pt-16 lg:scroll-pt-24 scrollbar-hide">
 	<head>
+		<GoogleAnalytics />
 		<meta name="author" content="Luca Derosas & Veronica Vacca" />
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
