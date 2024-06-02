@@ -1,0 +1,61 @@
+---
+import type { ImageMetadata } from "astro";
+import { Image, getImage } from "astro:assets";
+
+interface Props {
+    imageFolder: string;
+}
+
+const { imageFolder } = Astro.props;
+const images = import.meta.glob<{ default: ImageMetadata }>("/src/assets/*/*");
+const imagePaths = Object.keys(images).filter((imagePath) => {
+    return imagePath.startsWith(`/src/assets/${imageFolder}/`);
+});
+---
+
+<div id="gallery" class="container mx-auto px-2 pb-2 grid grid-cols-3 lg:grid-cols-4 row-4 lg:row-5 gap-2 lg:gap-4">
+    {
+        imagePaths.map(async (imagePath, index) => {
+            let image = images[imagePath]();
+            let optimizedImage = await getImage({
+                src: image,
+                width: 1920,
+            });
+            const mobileImageStyle = (index === 6) ? 'col-span-2 row-span-2 lg:col-span-1 lg:row-span-1' : '';
+            const lgImageStyle = (index === 0 || index === 7) ? 'lg:col-span-2 lg:row-span-2' : '';
+            const hideStyle = (imagePaths.length - index <= 2) ? 'lg:hidden' : '';
+
+            return (
+                    <a
+                            href={optimizedImage.src}
+                            data-pswp-width={optimizedImage.attributes.width}
+                            data-pswp-height={optimizedImage.attributes.height}
+                            target="_blank"
+                            class=`overflow-hidden rounded-none border-primary hover:border-secondary ${mobileImageStyle} ${lgImageStyle} ${hideStyle}`
+                    >
+                        <Image
+                                src={image}
+                                alt={"altText"}
+                                height={350}
+                                class={
+                                    "object-cover w-full grayscale-[100%] hover:grayscale-0 transition duration-300 ease-in-out aspect-square"
+                                }
+                        />
+                    </a>
+            );
+        })
+    }
+</div>
+
+<script>
+    import PhotoSwipeLightbox from "photoswipe/lightbox";
+    import "photoswipe/style.css";
+
+    const lightbox = new PhotoSwipeLightbox({
+        gallery: "#gallery",
+        children: "a",
+        pswpModule: () => import("photoswipe"),
+    });
+
+    lightbox.init();
+</script>

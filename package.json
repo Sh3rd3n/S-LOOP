@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "s-loop",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -12,9 +12,10 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.5.9",
+    "@astrojs/partytown": "^2.1.0",
     "@astrojs/tailwind": "^5.1.0",
     "astro": "^4.5.8",
-    "jquery": "^3.7.1",
+    "photoswipe": "^5.4.4",
     "tailwindcss": "^3.4.3",
     "tailwindcss-animated": "^1.0.1",
     "typescript": "^5.4.3"

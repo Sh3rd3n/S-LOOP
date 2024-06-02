@@ -25,12 +25,12 @@ export default {
 				'expand-navbar': {
 					'0%': {'background-color': 'rgba(0, 0, 0, 0.85)',},
 					'100%': {'background-color': 'rgba(0, 0, 0, 0)',}
-				},
+				}
 			},
 			animation: {
 				'shrink-navbar': 'shrink-navbar 0.3s linear forwards',
 				'expand-navbar': 'expand-navbar 0.3s linear forwards',
-				'fade-in': 'fade-in linear',
+				'fade-in': 'fade-in linear'
 			},
 		},
 		rotate: {
