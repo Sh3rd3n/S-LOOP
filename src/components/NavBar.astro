@@ -5,15 +5,19 @@ const links = Astro.props.links || [];
 <nav class="fixed z-20 w-full">
     <div id="nav-header" class="flex justify-between items-center">
         <a href="#hero" aria-label="Go to hero section" class="w-44 md:w-36 lg:w-44 flex justify-center items-center">
-            <img id="school-logo" class="h-44 md:h-36 lg:h-44 aspect-square p-10 md:p-8 lg:p-10 transition-all duration-500" src="/sloop-logo.webp" alt="S-LOOP Kiteboarding School" />
+            <img id="school-logo"
+                 class="h-44 md:h-36 lg:h-44 aspect-square p-10 md:p-8 lg:p-10 transition-all duration-500"
+                 src="/sloop-logo.webp" alt="S-LOOP Kiteboarding School"/>
         </a>
 
         <div id="links-bar" class="hidden md:flex justify-center items-center gap-6 lg:gap-10">
-            {links.map((link: any) => (<a href={link.href} aria-label={`Go to ${link.label} section`} class="font-light text-white md:text-2xl lg:text-3xl whitespace-nowrap">{link.label}</a>))}
+            {links.map((link: any) => (<a href={link.href} aria-label={`Go to ${link.label} section`}
+                                          class="font-light text-white md:text-2xl lg:text-3xl whitespace-nowrap">{link.label}</a>))}
         </div>
 
         <div class="md:hidden flex justify-center items-center w-28 lg:w-44">
-            <button id="mobile-menu-button" type="button" class="h-8 w-10 text-white group" role="switch" aria-checked="false" aria-label="Toggle mobile menu">
+            <button id="mobile-menu-button" type="button" class="h-8 w-10 text-white group" role="switch"
+                    aria-checked="false" aria-label="Toggle mobile menu">
                 <span class="relative flex overflow-hidden items-center justify-center size-full transform transition-all duration-200">
                     <span class="flex flex-col justify-between size-full transform transition-all duration-300 origin-center overflow-hidden">
                         <span class="bg-white h-0.5 w-10 transform transition-all duration-300 origin-left group-aria-checked:translate-y-10 delay-100"></span>
@@ -29,7 +33,7 @@ const links = Astro.props.links || [];
             </button>
         </div>
 
-        <div id="placeholder" class="hidden md:block size-44 md:size-36 lg:size-44"></div>
+        <div id="placeholder" class="hidden md:flex justify-center items-center size-44 md:size-36 lg:size-44"></div>
     </div>
 
     <div id="mobile-menu" class="hidden md:hidden bg-black bg-opacity-85">
@@ -48,7 +52,7 @@ const links = Astro.props.links || [];
     let scrolled = false;
     let menuOpen = false;
 
-    const baseLogoSize= "h-44 md:h-36 lg:h-44 p-10 md:p-8 lg:p-10"
+    const baseLogoSize = "h-44 md:h-36 lg:h-44 p-10 md:p-8 lg:p-10"
     const smallLogoSize = "h-20 md:h-16 lg:h-24 p-2 md:p-1 lg:p-2" // Change the menu size when the user scrolls
 
     const navHeader = document.getElementById('nav-header');

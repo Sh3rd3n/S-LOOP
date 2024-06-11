@@ -39,6 +39,7 @@ export default {
 		},
 		aspectRatio: {
 			'4/5': '4 / 5',
+			'4/3': '4 / 3',
 			...defaultTheme.aspectRatio,
 		},
 	},
