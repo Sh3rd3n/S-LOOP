@@ -7,7 +7,7 @@ export default defineConfig({
   // site: 'https://astro-photoswipe.petrovicz.com',
   i18n: {
     defaultLocale: "it",
-    locales: ["it", "en", "es", "fr", "de"],
+    locales: ["it", "gb", "es", "fr", "de"],
     prefixDefaultLocale: true,
   }
 });
