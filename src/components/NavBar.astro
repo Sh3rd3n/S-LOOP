@@ -59,7 +59,7 @@ let pathLang = Astro.url.pathname.split('/')[1] || 'it';
                     </a>
             ))}
 
-            <button class="menu-dropbtn text-2xl transition-all duration-150 block px-3 py-2 text-left text-white hover:text-black sm:text-2xl font-medium hover:bg-teal animate-fade-down animate-once animate-ease-out"><span class=`fi fi-${pathLang}`></span></button>
+            <button class="menu-dropbtn text-2xl transition-all duration-150 block px-3 py-2 text-left text-white hover:text-black sm:text-2xl font-medium animate-fade-down animate-once animate-ease-out"><span class=`fi fi-${pathLang}`></span></button>
 
             <div class="hidden menu-dropdown-content mt-2 text-nowrap shadow-lg animate-fade animate-duration-300">
                 <div class="flex flex-row w-full justify-around items-center p-2">
@@ -175,5 +175,6 @@ let pathLang = Astro.url.pathname.split('/')[1] || 'it';
     menuDropbtn.addEventListener('click', function() {
         toggleDropdownContent(menuDropdownContent, menuDropbtn);
         closeIfClickedOutside(menuDropdownContent, menuDropbtn);
+        menuDropbtn.classList.toggle("hover:bg-teal")
     });
 </script>
