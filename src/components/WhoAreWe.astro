@@ -2,6 +2,13 @@
 import StaffMember from './StaffMember.astro';
 import TextParagraph from "./TextParagraph.astro";
 
+import cristianImg from '../assets/content/cristian.webp';
+import marcoImg from '../assets/content/marco.webp';
+import lisaImg from '../assets/content/lisa.webp';
+import teamImg from '../assets/content/team.webp';
+import blancoImg from '../assets/content/blanco.webp';
+import leaImg from '../assets/content/lea.webp';
+
 let { header, paragraph1, paragraph2, cristianBio, marcoBio, lisaBio } = Astro.props;
 ---
 
@@ -24,7 +31,7 @@ let { header, paragraph1, paragraph2, cristianBio, marcoBio, lisaBio } = Astro.p
 
     <div class="size-24 md:size-32 bg-teal bg-opacity-40 absolute right-10 md:right-1/2 -mt-12 -z-10"></div>
 
-    <StaffMember name="CRISTIAN" image="/src/assets/content/cristian.webp" description={cristianBio} />
+    <StaffMember name="CRISTIAN" image={cristianImg} description={cristianBio} />
 
     <div class="w-2/5 h-24 md:h-32 bg-teal bg-opacity-60 mt-4 md:mt-10 -z-10"></div>
 
