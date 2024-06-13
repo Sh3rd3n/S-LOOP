@@ -15,11 +15,11 @@ let { header, description, cards } = Astro.props;
 
     <h2 class="w-full -mt-12 px-10 xl:px-72 font-stencil font-normal text-7xl text-center">{header}</h2>
 
-    <div class="px-10 xl:px-72">
+    <div class="px-10 xl:px-72 my-4">
         <TextParagraph content={description} />
     </div>
 
-    <div class="w-full h-80 overflow-y-hide bg-cover bg-fixed bg-center bg-no-repeat shadow-lg bg-[url('/kites.webp')]"></div>
+    <div class="w-full h-80 overflow-y-hide bg-cover bg-fixed bg-center bg-no-repeat shadow-lg bg-[url('/src/assets/content/kites.webp')]"></div>
 
     <CardsCarousel cards={cards} />
 </section>
