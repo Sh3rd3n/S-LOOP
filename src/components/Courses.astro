@@ -19,7 +19,7 @@ let { header, description, cards } = Astro.props;
         <TextParagraph content={description} />
     </div>
 
-    <img src="/kites.webp" loading="lazy" class="w-full object-cover max-h-80 mt-6" alt="Kiters surfing on a beautiful sea" />
+    <div class="w-full h-80 overflow-y-hide bg-cover bg-fixed bg-center bg-no-repeat shadow-lg bg-[url('/kites.webp')]"></div>
 
     <CardsCarousel cards={cards} />
 </section>
