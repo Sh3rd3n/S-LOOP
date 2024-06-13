@@ -1,6 +1,15 @@
 ---
+import { Image } from 'astro:assets';
+
 import StaffMember from './StaffMember.astro';
 import TextParagraph from "./TextParagraph.astro";
+
+import cristianImg from '../assets/content/cristian.webp';
+import marcoImg from '../assets/content/marco.webp';
+import lisaImg from '../assets/content/lisa.webp';
+import teamImg from '../assets/content/team.webp';
+import blancoImg from '../assets/content/blanco.webp';
+import leaImg from '../assets/content/lea.webp';
 
 let { header, paragraph1, paragraph2, cristianBio, marcoBio, lisaBio } = Astro.props;
 ---
@@ -19,7 +28,7 @@ let { header, paragraph1, paragraph2, cristianBio, marcoBio, lisaBio } = Astro.p
             <TextParagraph content={paragraph1} />
             <TextParagraph content={paragraph2} />
         </div>
-        <img src="/src/assets/content/team.webp" alt="kite surfer jumping" loading="lazy" class="md:w-2/3 -z-20 aspect-video object-cover grayscale-[100] lg:pr-4 max-w-[685x]"/>
+        <Image src="/src/assets/content/team.webp" alt="kite surfer jumping" loading="lazy" class="md:w-2/3 -z-20 aspect-video object-cover grayscale-[100] lg:pr-4 max-w-[685x]" inferSize />
     </div>
 
     <div class="size-24 md:size-32 bg-teal bg-opacity-40 absolute right-10 md:right-1/2 -mt-12 -z-10"></div>
@@ -28,7 +37,7 @@ let { header, paragraph1, paragraph2, cristianBio, marcoBio, lisaBio } = Astro.p
 
     <div class="w-2/5 h-24 md:h-32 bg-teal bg-opacity-60 mt-4 md:mt-10 -z-10"></div>
 
-    <StaffMember name="MARCO" image="/src/assets/content/lisa.webp" imageOnRight={true} description={marcoBio} />
+    <StaffMember name="MARCO" image="/src/assets/content/marco.webp" imageOnRight={true} description={marcoBio} />
 
     <div class="h-24 md:h-32 mt-4 md:mt-10 flex flex-row justify-end gap-6">
         <span class="w-3 md:w-10 h-full bg-teal bg-opacity-60"></span>
@@ -44,12 +53,12 @@ let { header, paragraph1, paragraph2, cristianBio, marcoBio, lisaBio } = Astro.p
         <div class="relative w-2/3 md:w-1/2">
             <span class="absolute top-0 -right-16 md:right-auto md:-left-16 size-24 md:size-32 bg-teal bg-opacity-60"></span>
             <h3 class="w-full md:text-right font-stencil font-normal text-4xl text-teal leading-snug">BLANCO</h3>
-            <img src="/src/assets/content/blanco.webp" alt="kite surfer jumping" loading="lazy" class="w-full aspect-4/3 object-cover grayscale-[100]"/>
+            <Image src="/src/assets/content/blanco.webp" alt="kite surfer jumping" loading="lazy" class="w-full aspect-4/3 object-cover grayscale-[100]" inferSize />
         </div>
         <div class="relative w-2/3 md:w-1/2 self-end">
             <span class="absolute top-0 -left-16 md:left-auto md:-right-16 size-24 md:size-32 bg-teal bg-opacity-60"></span>
             <h3 class="w-full text-right md:text-left font-stencil font-normal text-4xl text-teal leading-snug">LEA</h3>
-            <img src="/src/assets/content/lea.webp" alt="kite surfer jumping" loading="lazy" class="w-full aspect-4/3 object-cover grayscale-[100]"/>
+            <Image src="/src/assets/content/lea.webp" alt="kite surfer jumping" loading="lazy" class="w-full aspect-4/3 object-cover grayscale-[100]" inferSize />
         </div>
     </div>
 </section>
