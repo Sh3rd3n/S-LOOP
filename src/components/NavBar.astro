@@ -1,7 +1,7 @@
 ---
 const links = Astro.props.links || [];
 
-let baseUrl = Astro.site.origin;
+let baseUrl = Astro.site;
 let pathLang = Astro.url.pathname.split('/')[1] || 'it';
 ---
 
