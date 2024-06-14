@@ -1,8 +1,7 @@
 ---
 const links = Astro.props.links || [];
 
-let baseUrl = import.meta.env.url;
-// let baseUrl = Astro.site;
+let baseUrl = import.meta.env.SITE_URL;
 let pathLang = Astro.url.pathname.split('/')[1] || 'it';
 ---
 
