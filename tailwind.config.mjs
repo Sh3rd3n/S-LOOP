@@ -45,5 +45,6 @@ export default {
 	},
 	plugins: [
 		require('tailwindcss-animated'),
+		require('tailwindcss-3d')({ legacy: true }),
 	],
 }

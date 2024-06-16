@@ -3,7 +3,7 @@ import { defineConfig } from 'astro/config';
 import tailwind from "@astrojs/tailwind";
 
 export default defineConfig({
-  site: 'https://s-loop-sh3rd3ns-projects.vercel.app/',
+  site: 'https://s-loop.it',
   integrations: [tailwind()],
   // site: 'https://astro-photoswipe.petrovicz.com',
   i18n: {

@@ -1,6 +1,14 @@
 ---
+import { Image } from 'astro:assets';
+
+import heroBase from '../assets/content/hero.webp';
+import heroMobile from '../assets/content/hero-mobile.webp';
 ---
 
-<section id="hero" class="flex items-center justify-center min-h-screen bg-center bg-cover bg-no-repeat bg-parallax bg-[url('/hero-mobile.webp')] md:bg-[url('/hero.webp')]">
-    <h2 class="w-full text-center font-stencil text-8xl lg:text-9xl leading-snug text-white opacity-70 animate-fade">RIDE <span class="text-teal">THE WIND</span></h2>
+<section id="hero" class="relative h-screen bg-center bg-cover bg-no-repeat bg-parallax">
+    <Image src={heroBase} alt="Hero" class="hidden md:block absolute h-screen object-cover"/>
+    <Image src={heroMobile} alt="Hero" class="md:hidden absolute h-screen object-cover"/>
+    <div class="h-screen flex items-center justify-center">
+        <h2 class="w-full text-center font-stencil text-8xl lg:text-9xl leading-snug text-white opacity-70 animate-fade">RIDE <span class="text-teal">THE WIND</span></h2>
+    </div>
 </section>
