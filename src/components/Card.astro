@@ -4,7 +4,7 @@ import {Image} from 'astro:assets';
 let {image, title, button, duration, gear, description, price} = Astro.props;
 ---
 
-<div class="card group perspective-1000 w-80 lg:w-72 aspect-4/5 flex justify-center transition duration-500 sm:cursor-pointer">
+<div class="card group perspective-1000 w-80 aspect-4/5 flex justify-center transition duration-500 sm:cursor-pointer">
     <div class="card-content relative size-full border-teal/80 border-2 transition-all duration-500 transform-style-3d">
         <div class="absolute inset-0">
             <div class="relative size-full overflow-hidden">
@@ -18,7 +18,7 @@ let {image, title, button, duration, gear, description, price} = Astro.props;
         </div>
 
         <div class="absolute inset-0 bg-white rotate-y-180 backface-hidden">
-            <div class="relative size-full bg-white p-8 text-xl lg:text-lg">
+            <div class="relative size-full bg-white p-8 text-xl">
                 <svg class="absolute top-0 right-0 p-2 bg-teal/80 h-10 w-10 text-black"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
                 </svg>
