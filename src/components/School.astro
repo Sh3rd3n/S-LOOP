@@ -2,7 +2,7 @@
 import { Image } from 'astro:assets';
 import TextParagraph from './TextParagraph.astro';
 
-import kiterImg from "../assets/content/kiter.webp";
+import kiterImg from "../assets/content/school.jpg";
 import coniImg from "../assets/content/coni-logo.svg";
 import mspImg from "../assets/content/msp-logo.webp";
 import duotoneImg from "../assets/content/duotone-logo.svg";
@@ -21,7 +21,7 @@ let { header, subHeader, paragraph1, paragraph2, paragraph3, paragraph4, paragra
             <TextParagraph content={paragraph2} />
             <div class="size-32 bg-teal bg-opacity-30 absolute right-0 -z-10"></div>
         </div>
-        <Image src={kiterImg} alt="kite surfer jumping" loading="lazy" class="-z-20 aspect-square object-top object-cover mt-6 md:w-1/2 md:pt-0 md:pr-2 lg:pr-4 w-full" />
+        <Image src={kiterImg} alt="kite surfer jumping" loading="lazy" class="grayscale-[100] -z-20 aspect-square object-top object-cover mt-6 md:w-1/2 md:pt-0 md:pr-2 lg:pr-4 w-full" />
     </div>
     <TextParagraph content={paragraph3} />
     <TextParagraph content={paragraph4} />

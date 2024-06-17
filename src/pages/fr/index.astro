@@ -8,56 +8,84 @@ import CoursesSection from '../../components/Courses.astro';
 import PurchaseAndRentalSection from '../../components/PurchaseAndRental.astro';
 import MomentsSection from "../../components/Moments.astro";
 import ContactsSection from '../../components/Contacts.astro';
+
+import kiteImg from '../../assets/content/kite.webp';
+import wingImg from '../../assets/content/wing.png';
+import campImg from '../../assets/content/camp.png';
 ---
 
 <Layout title="École de Kitesurf S-LOOP">
     <NavBar links={[
-        { href: "#school", label: "ÉCOLE" },
-        { href: "#who-are-we", label: "QUI SOMMES-NOUS" },
-        { href: "#courses", label: "COURS" },
-        { href: "#purchase-and-rental", label: "LOCATION" },
-        { href: "#moments", label: "MOMENTS" },
-        { href: "#contacts", label: "CONTACTS" }
-    ]} />
+        {href: "#school", label: "ÉCOLE"},
+        {href: "#who-are-we", label: "QUI SOMMES-NOUS"},
+        {href: "#courses", label: "COURS"},
+        {href: "#purchase-and-rental", label: "LOCATION"},
+        {href: "#moments", label: "MOMENTS"},
+        {href: "#contacts", label: "CONTACTS"}
+    ]}/>
 
-    <HeroSection />
+    <HeroSection/>
 
     <SchoolSection
-        header="ÉCOLE"
-        subHeader="Bienvenue à l'école de Kitesurf <span class='text-nowrap'>S-Loop</span> à Olbia"
-        paragraph1="Votre porte d'entrée dans le monde passionnant du <strong>Kitesurf</strong> et du <span class='text-nowrap'><strong>Wing Foil.</strong></span>"
-        paragraph2="Située sur la suggestive plage de Saline, à quelques minutes de la ville d'Olbia, la <strong>S-Loop</strong> est une école de nouveau concept qui vise à devenir un point de référence pour les passionnés de sports nautiques."
-        paragraph3="En tant qu'école officielle de <strong>Duotone</strong> et <strong>ION</strong>, nous garantissons l'accès à l'<strong>équipement le plus avancé et le plus sûr du marché</strong>, assurant une expérience d'apprentissage de qualité supérieure. Notre affiliation avec le <strong>CONI</strong> et <strong>MSP Italia</strong> atteste de notre engagement envers l'<strong>excellence et le respect des normes les plus élevées</strong> dans le domaine des sports nautiques."
-        paragraph4="Nos cours sont conçus pour accueillir les surfeurs aspirants de tous âges, <strong>des débutants touchant la planche pour la première fois aux experts cherchant à perfectionner leur technique</strong>. Avec une équipe d'instructeurs hautement qualifiés, nous proposons non seulement une formation pratique, mais <strong>également des cours de certification pour ceux qui souhaitent transformer leur passion en profession</strong>."
-        paragraph5="Choisir S-Loop signifie opter pour <strong>la qualité, la sécurité et un enseignement amusant garanti</strong>. Nous sommes impatients de surfer sur les vagues et le vent ensemble."
-        partners="NOS PARTENAIRES OFFICIELS"
+            header="ÉCOLE"
+            subHeader="Bienvenue à l'école de Kitesurf <span class='text-nowrap'>S-Loop</span> à Olbia"
+            paragraph1="Votre porte d'entrée dans le monde passionnant du <strong>Kitesurf</strong> et du <span class='text-nowrap'><strong>Wing Foil.</strong></span>"
+            paragraph2="Située sur la suggestive plage de Saline, à quelques minutes de la ville d'Olbia, la <strong>S-Loop</strong> est une école de nouveau concept qui vise à devenir un point de référence pour les passionnés de sports nautiques."
+            paragraph3="En tant qu'école officielle de <strong>Duotone</strong> et <strong>ION</strong>, nous garantissons l'accès à l'<strong>équipement le plus avancé et le plus sûr du marché</strong>, assurant une expérience d'apprentissage de qualité supérieure. Notre affiliation avec le <strong>CONI</strong> et <strong>MSP Italia</strong> atteste de notre engagement envers l'<strong>excellence et le respect des normes les plus élevées</strong> dans le domaine des sports nautiques."
+            paragraph4="Nos cours sont conçus pour accueillir les surfeurs aspirants de tous âges, <strong>des débutants touchant la planche pour la première fois aux experts cherchant à perfectionner leur technique</strong>. Avec une équipe d'instructeurs hautement qualifiés, nous proposons non seulement une formation pratique, mais <strong>également des cours de certification pour ceux qui souhaitent transformer leur passion en profession</strong>."
+            paragraph5="Choisir S-Loop signifie opter pour <strong>la qualité, la sécurité et un enseignement amusant garanti</strong>. Nous sommes impatients de surfer sur les vagues et le vent ensemble."
+            partners="NOS PARTENAIRES OFFICIELS"
     />
 
     <WhoAreWeSection
-        header="QUI SOMMES-NOUS"
-        paragraph1="<strong>Chez <span class='text-nowrap'>S-Loop</span>, nous sommes plus qu'une équipe.</strong>"
-        paragraph2="Ceux qui fréquentent notre école savent qu'ils trouveront non seulement un environnement à la pointe des techniques d'enseignement, mais aussi de vrais amis et des personnes de confiance."
-        cristianBio="<strong>Cristian Jesús Cancino Mondaca,</strong> fondateur de l'école <span class='text-nowrap'>S-Loop</span>, est un vétéran des sports nautiques, avec <strong>plus de 10 ans d'expérience</strong> qui témoignent de son dévouement et de son amour pour le Kitesurf.<br><br>L'école de Cristian est le fruit de son engagement à partager sa passion avec d'autres passionnés. Sa méthode d'enseignement vise à être amusante, dynamique et surtout efficace, permettant aux étudiants d'apprendre rapidement et en toute sécurité."
-        marcoBio="Instructeur depuis 2013, il a accumulé de nombreuses expériences dans divers spots à travers le monde. De l'Espagne aux Îles Canaries, de la Thaïlande au Cap-Vert, et même jusqu'en Australie, en affrontant toutes sortes de conditions : vagues, eau plate, vent fort ou léger, de la plage au bateau. Toujours positif, il se consacre avec enthousiasme à transmettre la beauté du kitesurf à ses élèves."
-        noemiBio="Noemi est une instructrice de kitesurf avec plus de 5 ans d'expérience. Elle a commencé à enseigner en Italie, puis s'est installée en Australie, où elle a travaillé en tant qu'instructrice et directrice d'école. De retour en Italie, elle a fondé l'École de Kitesurf S-Loop avec Cristian et Andrea, dans le but de créer un environnement accueillant et professionnel pour les passionnés de sports nautiques."
+            header="QUI SOMMES-NOUS"
+            paragraph1="<strong>Chez <span class='text-nowrap'>S-Loop</span>, nous sommes plus qu'une équipe.</strong>"
+            paragraph2="Ceux qui fréquentent notre école savent qu'ils trouveront non seulement un environnement à la pointe des techniques d'enseignement, mais aussi de vrais amis et des personnes de confiance."
+            cristianBio="<strong>Cristian Jesús Cancino Mondaca,</strong> fondateur de l'école <span class='text-nowrap'>S-Loop</span>, est un vétéran des sports nautiques, avec <strong>plus de 10 ans d'expérience</strong> qui témoignent de son dévouement et de son amour pour le Kitesurf.<br><br>L'école de Cristian est le fruit de son engagement à partager sa passion avec d'autres passionnés. Sa méthode d'enseignement vise à être amusante, dynamique et surtout efficace, permettant aux étudiants d'apprendre rapidement et en toute sécurité."
+            marcoBio="Instructeur depuis 2013, il a accumulé de nombreuses expériences dans divers spots à travers le monde. De l'Espagne aux Îles Canaries, de la Thaïlande au Cap-Vert, et même jusqu'en Australie, en affrontant toutes sortes de conditions : vagues, eau plate, vent fort ou léger, de la plage au bateau. Toujours positif, il se consacre avec enthousiasme à transmettre la beauté du kitesurf à ses élèves."
+            noemiBio="Noemi est une instructrice de kitesurf avec plus de 5 ans d'expérience. Elle a commencé à enseigner en Italie, puis s'est installée en Australie, où elle a travaillé en tant qu'instructrice et directrice d'école. De retour en Italie, elle a fondé l'École de Kitesurf S-Loop avec Cristian et Andrea, dans le but de créer un environnement accueillant et professionnel pour les passionnés de sports nautiques."
     />
 
     <CoursesSection
-        header="COURS"
-        description="À l'école S-Loop, nous proposons une gamme diversifiée de cours pour répondre aux besoins et à l'expérience de chaque étudiant. Nos cours sont conçus pour satisfaire à la fois ceux qui abordent ces disciplines pour la première fois et ceux qui souhaitent transformer leur passion en profession."
-        cards={[
-            {title: "LEÇON INDIVIDUELLE", duration: "1 heure", cost: "70€", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.", scaled: true, first: false},
-            {title: "SURF CAMP", duration: "7 jours", cost: "700€", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.", scaled: false, first: true},
-            {title: "CERTIFICATION", duration: "ND jours", cost: "ND€", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.", scaled: false, first: false}
-        ]}
+            header="COURS"
+            description="À l'école S-Loop, nous proposons une gamme diversifiée de cours pour répondre aux besoins et à l'expérience de chaque étudiant. Nos cours sont conçus pour satisfaire à la fois ceux qui abordent ces disciplines pour la première fois et ceux qui souhaitent transformer leur passion en profession."
+            cards={[
+                {
+                    "image": kiteImg,
+                    "title": "KITESURF",
+                    "button": "EN SAVOIR PLUS",
+                    "duration": "<strong>Durée:</strong> 1 heure",
+                    "gear": "<strong>Équipement:</strong> Inclus",
+                    "description": "Leçon individuelle idéale pour ceux qui veulent apprendre le kitesurf depuis zéro ou pour ceux qui souhaitent reprendre et améliorer leur technique.",
+                    "price": "PRIX: 70€"
+                },
+                {
+                    "image": wingImg,
+                    "title": "WING SURF",
+                    "button": "EN SAVOIR PLUS",
+                    "duration": "<strong>Durée:</strong> 1 heure",
+                    "gear": "<strong>Équipement:</strong> Inclus",
+                    "description": "Leçon individuelle idéale pour ceux qui veulent apprendre le Wing Surf depuis zéro ou pour ceux qui souhaitent reprendre et améliorer leur technique.",
+                    "price": "PRIX: 70€"
+                },
+                {
+                    "image": campImg,
+                    "title": "SURF CAMP",
+                    "button": "EN SAVOIR PLUS",
+                    "duration": "<strong>Durée:</strong> 1 semaine",
+                    "gear": "<strong>Équipement:</strong> Inclus",
+                    "description": "Cours intensif dédié à ceux qui veulent s'immerger complètement dans le monde du Kite/Wing Surf et obtenir d'excellents résultats en peu de temps.",
+                    "price": "PRIX: 700€"
+                }
+            ]}
     />
 
     <PurchaseAndRentalSection
-            header = "LOCATION"
-            description = "Si vous ne disposez pas de votre propre équipement, notre école propose un service de location qui met à votre disposition le meilleur du marché. Notre sélection comprend des produits Duotone et Ion, tous mis à jour avec les dernières versions disponibles. Nous garantissons des performances excellentes et une sécurité maximale dans toutes les conditions."
+            header="LOCATION"
+            description="Notre école propose un service de location qui met à votre disposition le meilleur du marché. Notre sélection comprend des produits Duotone et Ion, tous mis à jour avec les dernières versions disponibles. Nous garantissons des performances excellentes et une sécurité maximale dans toutes les conditions."
     />
 
-    <MomentsSection header="MOMENTS" />
+    <MomentsSection header="MOMENTS"/>
 
-    <ContactsSection header="CONTACTS" address="(près de la plage “Le Saline”)" />
+    <ContactsSection header="CONTACTS" address="(près de la plage “Le Saline”)"/>
 </Layout>

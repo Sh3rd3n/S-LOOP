@@ -1,3 +1,46 @@
 ---
-$END$
+import {Image} from 'astro:assets';
+
+let {image, title, button, duration, gear, description, price} = Astro.props;
 ---
+
+<div class="card group perspective-1000 w-80 lg:w-72 aspect-4/5 flex justify-center transition duration-500 sm:cursor-pointer">
+    <div class="card-content relative size-full border-teal/80 border-2 transition-all duration-500 transform-style-3d">
+        <div class="absolute inset-0">
+            <div class="relative size-full overflow-hidden">
+                <div class="container size-full flex flex-col items-center sm:gap-4 lg:gap-6">
+                    <Image src={image} alt="kitesurf-lesson" class="grayscale-[100] aspect-square w-full h-[55%] lg:h-[50%] mt-6 object-contain"/>
+                    <p class="w-full text-center text-black font-stencil text-4xl">{title}</p>
+                    <div class="mt-6 md:mt-2 lg:mt-0 p-2 w-28 text-center border border-black/80">{button}</div>
+                </div>
+                <div class="absolute top-12 bg-teal/80 size-[200%] rotate-[65deg] -z-10"></div>
+            </div>
+        </div>
+
+        <div class="absolute inset-0 bg-white rotate-y-180 backface-hidden">
+            <div class="relative size-full bg-white p-8 text-xl lg:text-lg">
+                <svg class="absolute top-0 right-0 p-2 bg-teal/80 h-10 w-10 text-black"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+
+                <div class="h-1/3 flex flex-col justify-around items-center">
+                    <div class="w-full">
+                        <p><Fragment set:html={duration} /></p>
+                    </div>
+
+                    <div class="w-full">
+                        <p><Fragment set:html={gear} /></p>
+                    </div>
+                </div>
+
+                <div class="h-1/3 w-full mt-6 md:my-2">
+                    <p>{description}</p>
+                </div>
+
+                <div class="h-1/3 lg:mt-6 flex justify-around items-center">
+                    <p class="p-2 bg-teal">{price}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

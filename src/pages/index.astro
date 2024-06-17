@@ -8,6 +8,10 @@ import CoursesSection from '../components/Courses.astro';
 import PurchaseAndRentalSection from '../components/PurchaseAndRental.astro';
 import MomentsSection from '../components/Moments.astro';
 import ContactsSection from '../components/Contacts.astro';
+
+import kiteImg from '../assets/content/kite.webp';
+import wingImg from '../assets/content/wing.png';
+import campImg from '../assets/content/camp.png';
 ---
 
 <Layout title="S-LOOP Kiteboarding School">
@@ -44,38 +48,41 @@ import ContactsSection from '../components/Contacts.astro';
 
     <CoursesSection
             header="CORSI"
-            description="Alla scuola S-Loop offriamo una gamma diversificata di corsi per adattarci alle esigenze e all'esperienza di ogni singolo studente. I nostri corsi sono pensati per soddisfare sia chi si avvicina per la prima volta a queste discipline, sia chi desidera trasformare la propria passione in una professione. "
+            description="Alla scuola S-Loop offriamo una gamma diversificata di corsi per adattarci alle esigenze e all'esperienza di ogni singolo studente. I nostri corsi sono pensati per soddisfare sia chi si avvicina per la prima volta a queste discipline, sia chi desidera trasformare la propria passione in una professione."
             cards={[
                 {
-                    title: "LEZIONE KITESURF",
-                    duration: "1 ora",
-                    cost: "70€",
-                    description: "Lezione singola per imparare il controllo del kite, le tecniche di sicurezza fino ad arrivare a praticare in autonomia. <br><br><strong>Attrezzatura inclusa.</strong>",
-                    scaled: true,
-                    first: false
+                    image: kiteImg,
+                    title: "KITESURF",
+                    button: "SCOPRI DI PIÙ",
+                    duration: "<strong>Durata:</strong> 1 ora",
+                    gear: "<strong>Attrezzatura:</strong> Inclusa",
+                    description: "Lezione singola ideale sia per chi vuole imparare il Kitesurf da zero, sia per chi desidera riprendere e migliorare la propria tecnica.",
+                    price: "PREZZO: 70€"
                 },
                 {
-                    title: "LEZIONE WING SURF",
-                    duration: "1 ora + 20 minuti",
-                    cost: "70",
-                    description: "asd",
-                    scaled: false,
-                    first: true
+                    image: wingImg,
+                    title: "WING SURF",
+                    button: "SCOPRI DI PIÙ",
+                    duration: "<strong>Durata:</strong> 1 ora",
+                    gear: "<strong>Attrezzatura:</strong> Inclusa",
+                    description: "Lezione singola ideale sia per chi vuole imparare il Wing Surf da zero, sia per chi desidera riprendere e migliorare la propria tecnica.",
+                    price: "PREZZO: 70€"
                 },
                 {
+                    image: campImg,
                     title: "SURF CAMP",
-                    duration: "7 giorni",
-                    cost: "700€",
-                    description: "asd",
-                    scaled: false,
-                    first: false
+                    button: "SCOPRI DI PIÙ",
+                    duration: "<strong>Durata:</strong> 1 settimana",
+                    gear: "<strong>Attrezzatura:</strong> Inclusa",
+                    description: "Percorso intensivo dedicato a chi vuole immergersi completamente nel mondo del Kite/Wing Surf e raggiungere ottimi risultati in poco tempo.",
+                    price: "PREZZO: 700€"
                 }
             ]}
     />
 
     <PurchaseAndRentalSection
             header="NOLEGGIO"
-            description="Qualora non disponiate della vostra attrezzatura, la nostra scuola offre un servizio di noleggio che mette a vostra disposizione il meglio sul mercato. La nostra selezione include prodotti Duotone e Ion, tutti aggiornati alle ultime uscite disponibili. Garantiamo prestazioni eccellenti e massima sicurezza in ogni condizione."
+            description="La nostra scuola offre un servizio di noleggio che mette a vostra disposizione il meglio sul mercato. La nostra selezione include prodotti Duotone e Ion, tutti aggiornati alle ultime uscite disponibili. Garantiamo prestazioni eccellenti e massima sicurezza in ogni condizione."
     />
 
     <MomentsSection header="MOMENTI" />

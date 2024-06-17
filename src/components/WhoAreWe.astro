@@ -6,7 +6,7 @@ import TextParagraph from "./TextParagraph.astro";
 
 import teamImg from "../assets/content/team.webp";
 import cristianImg from "../assets/content/cristian.webp";
-import marcoImg from "../assets/content/marco.webp";
+import marcoImg from "../assets/content/marco.jpg";
 import noemiImg from "../assets/content/noemi.webp";
 import blancoImg from "../assets/content/blanco.webp";
 import leaImg from "../assets/content/lea.webp";
@@ -47,18 +47,18 @@ let { header, paragraph1, paragraph2, cristianBio, marcoBio, noemiBio } = Astro.
         <span class="w-2/5 h-full bg-teal bg-opacity-60"></span>
     </div>
 
-    <StaffMember name="NOEMI" image={noemiImg} description={noemiBio} />
+    <!--<StaffMember name="NOEMI" image={noemiImg} description={noemiBio} />-->
 
-    <div class="px-10 xl:px-72 mt-4 md:mt-10 flex flex-col md:flex-row gap-10 md:gap-40">
-        <div class="relative w-2/3 md:w-1/2">
-            <span class="absolute top-0 -right-16 md:right-auto md:-left-16 size-24 md:size-32 bg-teal bg-opacity-60"></span>
-            <h3 class="w-full md:text-right font-stencil font-normal text-4xl text-teal leading-snug">BLANCO</h3>
-            <Image src={blancoImg} alt="kite surfer jumping" loading="lazy" class="w-full aspect-4/3 object-cover grayscale-[100]" />
-        </div>
-        <div class="relative w-2/3 md:w-1/2 self-end">
-            <span class="absolute top-0 -left-16 md:left-auto md:-right-16 size-24 md:size-32 bg-teal bg-opacity-60"></span>
-            <h3 class="w-full text-right md:text-left font-stencil font-normal text-4xl text-teal leading-snug">LEA</h3>
-            <Image src={leaImg} alt="kite surfer jumping" loading="lazy" class="w-full aspect-4/3 object-cover grayscale-[100]" />
-        </div>
-    </div>
+    <!--<div class="px-10 xl:px-72 mt-4 md:mt-10 flex flex-col md:flex-row gap-10 md:gap-40">-->
+    <!--    <div class="relative w-2/3 md:w-1/2">-->
+    <!--        <span class="absolute top-0 -right-16 md:right-auto md:-left-16 size-24 md:size-32 bg-teal bg-opacity-60"></span>-->
+    <!--        <h3 class="w-full md:text-right font-stencil font-normal text-4xl text-teal leading-snug">BLANCO</h3>-->
+    <!--        <Image src={blancoImg} alt="kite surfer jumping" loading="lazy" class="w-full aspect-4/3 object-cover grayscale-[100]" />-->
+    <!--    </div>-->
+    <!--    <div class="relative w-2/3 md:w-1/2 self-end">-->
+    <!--        <span class="absolute top-0 -left-16 md:left-auto md:-right-16 size-24 md:size-32 bg-teal bg-opacity-60"></span>-->
+    <!--        <h3 class="w-full text-right md:text-left font-stencil font-normal text-4xl text-teal leading-snug">LEA</h3>-->
+    <!--        <Image src={leaImg} alt="kite surfer jumping" loading="lazy" class="w-full aspect-4/3 object-cover grayscale-[100]" />-->
+    <!--    </div>-->
+    <!--</div>-->
 </section>

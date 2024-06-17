@@ -1,37 +1,35 @@
 ---
+import Card from './Card.astro';
 let cards = Astro.props.cards;
 ---
 
-<div id="carousel" class="w-full h-full py-10 md:py-20 flex items-center md:justify-center overflow-x-auto sm:overflow-x-hidden">
+<div id="carousel" class="w-full h-full py-10 flex items-center lg:justify-center overflow-x-auto">
     <div class="flex flex-row justify-center items-center gap-6 sm:gap-10 lg:gap-16 mx-6">
         {cards.map((card : any) => (
-                <div class={`card p-6 w-80 sm:w-52 lg:w-72 aspect-4/5 flex justify-center bg-teal bg-opacity-60 transition duration-500 sm:cursor-pointer ${card.scaled ? 'sm:scale-125' : ''}  ${card.first ? 'sm:order-first' : ''}`}>
-                    <div class="container flex flex-col">
-                        <p class="h-6 mb-10 md:mb-4 lg:mb-8 lg:mt-4 self-center font-stencil text-2xl sm:text-sm lg:text-xl scale-110 lg:scale-100">{card.title}</p>
-                        <p class="h-6 mb-8 md:mb-4 lg:mb-8 font-jost text-2xl sm:text-xs md:text-sm lg:text-lg">Durata: {card.duration}</p>
-                        <p class="h-6 mb-8 md:mb-4 lg:mb-8 font-jost text-2xl sm:text-xs md:text-sm lg:text-lg">Costo: {card.cost}</p>
-                        <p class="font-jost sm:text-xs lg:text-sm"><Fragment set:html={card.description} /></p>
-                    </div>
-                </div>
+            <Card image={card.image} title={card.title} button={card.button} duration={card.duration} gear={card.gear} description={card.description} price={card.price} />
         ))}
     </div>
 </div>
 
 <script is:inline>
-    const cards = document.querySelectorAll('.card');
+    const cards = document.querySelectorAll('.card-content');
 
-    cards.forEach(card => {
-        card.addEventListener('click', updateCardHeightsOnClick);
+    cards.forEach((card) => {
+        card.addEventListener('click', (event) => {
+            event.stopPropagation();
+
+            cards.forEach((otherCard) => {
+                if (otherCard !== card)
+                    otherCard.classList.remove('rotate-y-180');
+            });
+
+            card.classList.toggle('rotate-y-180');
+        });
     });
 
-    function updateCardHeightsOnClick(event) {
-        if (window.innerWidth < 640) return; // Only for larger screens
-
-        cards.forEach(card => {
-            card.classList.remove('sm:scale-125');
+    document.addEventListener('click', () => {
+        cards.forEach((card) => {
+            card.classList.remove('rotate-y-180');
         });
-
-        const clickedCard = event.currentTarget;
-        clickedCard.classList.add('sm:scale-125');
-    }
+    });
 </script>
