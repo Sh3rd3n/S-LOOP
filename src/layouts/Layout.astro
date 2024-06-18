@@ -1,66 +1,23 @@
 ---
 import '../styles/global.css';
-const {title} = Astro.props;
+import WebsiteStructuredData from '../components/WebsiteStructuredData.astro';
 ---
 
 <!DOCTYPE html>
 <html lang="it" class="scroll-smooth scroll-pt-20 md:scroll-pt-16 lg:scroll-pt-24 scrollbar-hide">
 <head>
-    <meta name="author" content="Luca Derosas & Veronica Vacca"/>
+    <title>S-LOOP Kiteboarding School | Olbia, Sardegna</title>
+    <meta name="lang" content="it"/>
     <meta charset="UTF-8"/>
-    <meta name="description" content="S-LOOP Kiteboarding School"/>
+    <meta name="author" content="Luca Derosas & Veronica Vacca"/>
+    <meta name="description" content="S-LOOP Kiteboarding School a Olbia offre corsi di Kitesurf e Wingsurf per principianti ed esperti. Scopri di più e unisciti a noi!">
+    <meta name="keywords" content="Kitesurf, Wingsurf, Wing Foil, scuola di kitesurf, scuola di wingsurf, scuola di wing foil, Olbia, Sardegna, Duotone, ION, corsi di kitesurf, corsi di wingsurf, corsi di wing foil">
     <meta name="viewport" content="width=device-width"/>
+    <meta name="generator" content={Astro.generator}/>
     <script defer src="https://cloud.umami.is/script.js" data-website-id="2f366456-476b-4b97-abe7-aba9fc4b3b97"></script>
     <link rel="icon" type="image/svg+xml" href="/sloop-logo-min.webp"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css"/>
-    <style>
-        @font-face {
-            font-family: 'Allerta Stencil';
-            font-style: normal;
-            font-weight: 400;
-            font-display: swap;
-            src: url(https://fonts.gstatic.com/s/allertastencil/v22/HTx0L209KT-LmIE9N7OR6eiycOe1_Db2.woff2) format('woff2');
-            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-        }
-
-        @font-face {
-            font-family: 'Alumni Sans';
-            font-style: italic;
-            font-weight: 100 900;
-            font-display: swap;
-            src: url(https://fonts.gstatic.com/s/alumnisans/v18/nwpStKqkOwdO2aOIwhWudG-g3w8aZQ.woff2) format('woff2');
-            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-        }
-
-        @font-face {
-            font-family: 'Alumni Sans';
-            font-style: normal;
-            font-weight: 100 900;
-            font-display: swap;
-            src: url(https://fonts.gstatic.com/s/alumnisans/v18/nwpQtKqkOwdO2aOIwhWudG-l7w0.woff2) format('woff2');
-            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-        }
-
-        @font-face {
-            font-family: 'Jost';
-            font-style: italic;
-            font-weight: 100 900;
-            font-display: swap;
-            src: url(https://fonts.gstatic.com/s/jost/v15/92zUtBhPNqw73oHt4D4h.woff2) format('woff2');
-            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-        }
-
-        @font-face {
-            font-family: 'Jost';
-            font-style: normal;
-            font-weight: 100 900;
-            font-display: swap;
-            src: url(https://fonts.gstatic.com/s/jost/v15/92zatBhPNqw73oTd4g.woff2) format('woff2');
-            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-        }
-    </style>
-    <meta name="generator" content={Astro.generator}/>
-    <title>{title}</title>
+    <WebsiteStructuredData />
 </head>
 
 <body>
@@ -73,16 +30,3 @@ const {title} = Astro.props;
     </div>
 </footer>
 </html>
-
-<style>
-    /* Hide scrollbar for Chrome, Safari and Opera */
-    .scrollbar-hide::-webkit-scrollbar {
-        display: none;
-    }
-
-    /* Hide scrollbar for IE, Edge and Firefox */
-    .scrollbar-hide {
-        -ms-overflow-style: none; /* IE and Edge */
-        scrollbar-width: none; /* Firefox */
-    }
-</style>

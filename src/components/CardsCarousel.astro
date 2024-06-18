@@ -6,7 +6,7 @@ let cards = Astro.props.cards;
 <div id="carousel" class="w-full h-full py-10 flex items-center lg:justify-center overflow-x-auto">
     <div class="flex flex-row justify-center items-center gap-6 sm:gap-10 lg:gap-16 mx-6">
         {cards.map((card : any) => (
-            <Card image={card.image} title={card.title} button={card.button} duration={card.duration} gear={card.gear} description={card.description} price={card.price} />
+            <Card image={card.image} alt={card.alt} title={card.title} button={card.button} duration={card.duration} gear={card.gear} description={card.description} price={card.price} />
         ))}
     </div>
 </div>
