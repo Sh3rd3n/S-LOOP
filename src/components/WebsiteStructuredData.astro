@@ -1,35 +1,50 @@
 ---
-// WebsiteStructuredData.astro
-const schema = {
-    "@context": "https://schema.org",
-    "@type": "SportsClub",
-    "name": "S-LOOP Kiteboarding School",
-    "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Via Isola Padron Fiaso",
-        "addressLocality": "Olbia",
-        "addressRegion": "Sardegna",
-        "addressCountry": "IT",
-        "postalCode": "07026",
-    },
-    "description": "S-LOOP Kiteboarding School a Olbia offre corsi di Kitesurf, Wing Surf e Wing Foil, con possibilità di noleggio attrezzatura.",
-    "url": "https://www.s-loop.it",
-    "logo": "https://www.s-loop.it/sloop-logo-min.webp",
-    "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+39-351-834-2421",
-        "contactType": "Customer Service",
-        "email": "info@s-loop.it"
-    },
-    "sameAs": [
-        "https://www.instagram.com/s.loop.kiteschool/",
-        "https://www.facebook.com/sl.kiteschool",
-        "https://wa.me/c/393518342421",
-        "https://panoramicams.com/punta-saline-olbia"
-    ]
-};
 ---
 
 <script type="application/ld+json">
-    {JSON.stringify(schema)}
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "S-LOOP Kiteboarding School",
+        "image": "https://www.s-loop.it/favicon.svg",
+        "description": "S-LOOP Kiteboarding School a Olbia, Sardegna, certificata CONI e MSP Italia, partner Duotone e Ion, offre corsi di Kitesurf, Wing Foil e Wing Surf per principianti ed esperti.",
+        "telephone": "+39 351 834 2421",
+        "email": "info@s-loop.it",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Via Isola Padron Fiaso, presso spiaggia 'Le Saline'",
+            "addressLocality": "Olbia",
+            "addressRegion": "Sardegna",
+            "postalCode": "07026",
+            "addressCountry": "IT"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 40.9054352,
+            "longitude": 9.5726253
+        },
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday",
+                    "Sunday"
+                ],
+                "opens": "09:00",
+                "closes": "18:30"
+            }
+        ],
+        "url": "https://www.s-loop.it",
+        "sameAs": [
+            "https://www.instagram.com/s.loop.kiteschool/",
+            "https://www.facebook.com/sl.kiteschool",
+            "https://wa.me/c/393518342421",
+            "https://panoramicams.com/punta-saline-olbia"
+        ]
+    }
 </script>
