@@ -1,17 +1,19 @@
 ---
 import '../styles/global.css';
 import WebsiteStructuredData from '../components/WebsiteStructuredData.astro';
+
+let {title, lang, description, keywords} = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="it" class="scroll-smooth scroll-pt-20 md:scroll-pt-16 lg:scroll-pt-24 scrollbar-hide">
 <head>
-    <title>S-LOOP Kiteboarding School | Olbia, Sardegna</title>
-    <meta name="lang" content="it"/>
+    <title>{title}</title>
+    <meta name="lang" content={lang}/>
     <meta charset="UTF-8"/>
     <meta name="author" content="Luca Derosas & Veronica Vacca"/>
-    <meta name="description" content="S-LOOP Kiteboarding School a Olbia offre corsi di Kitesurf e Wingsurf per principianti ed esperti. Scopri di più e unisciti a noi!">
-    <meta name="keywords" content="kitesurf Olbia, wing surf Sardegna, wing foil Sardegna, scuola kitesurf, corsi kitesurf, kiteboarding school Olbia, certificati CONI, MSP Italia, Duotone, Ion">
+    <meta name="description" content={description}>
+    <meta name="keywords" content={keywords}>
     <meta name="viewport" content="width=device-width"/>
     <meta name="generator" content={Astro.generator}/>
 
@@ -19,17 +21,18 @@ import WebsiteStructuredData from '../components/WebsiteStructuredData.astro';
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.s-loop.it" />
     <meta property="og:image" content="https://www.s-loop.it/favicon.svg" />
-    <meta property="og:description" content="S-LOOP Kiteboarding School a Olbia offre corsi di Kitesurf e Wingsurf per principianti ed esperti. Scopri di più e unisciti a noi!" />
+    <meta property="og:description" content={description} />
     <meta property="og:site_name" content="S-LOOP Kiteboarding School" />
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@sloopkite">
     <meta name="twitter:title" content="S-LOOP Kiteboarding School | Olbia, Sardegna">
-    <meta name="twitter:description" content="S-LOOP Kiteboarding School a Olbia offre corsi di Kitesurf e Wingsurf per principianti ed esperti. Scopri di più e unisciti a noi!">
+    <meta name="twitter:description" content={description}>
     <meta name="twitter:image" content="https://www.s-loop.it/favicon.svg">
 
     <script defer src="https://cloud.umami.is/script.js" data-website-id="2f366456-476b-4b97-abe7-aba9fc4b3b97"></script>
 
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">

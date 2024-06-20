@@ -10,18 +10,17 @@ let pathLang = Astro.url.pathname.split('/')[1] || 'it';
 
 <nav class="fixed z-20 w-full">
     <div id="nav-header" class="flex justify-between items-center md:bg-gradient-to-b md:from-black/70">
-        <a href="#hero" aria-label="Go to hero section" class="w-44 md:w-36 lg:w-44 flex justify-center items-center">
+        <a href="#hero" aria-label="Go to hero section" class="w-44 flex justify-center items-center">
             <Image id="school-logo"
                  class="size-44 md:size-36 lg:size-44 aspect-square p-10 md:p-8 lg:p-10 transition-all duration-500"
                  src={schoolLogo} alt="S-LOOP Kiteboarding School" />
         </a>
 
-        <div id="links-bar" class="hidden md:flex justify-center items-center gap-6 lg:gap-10">
-            {links.map((link: any) => (<a href={link.href} aria-label={`Go to ${link.label} section`}
-                                          class="font-light md:text-white md:text-2xl lg:text-3xl whitespace-nowrap">{link.label}</a>))}
+        <div id="links-bar" class="hidden lg:flex justify-center items-center gap-6 lg:gap-10">
+            {links.map((link: any) => (<a href={link.href} aria-label={`Go to ${link.label} section`} class="font-light md:text-white md:text-2xl lg:text-3xl whitespace-nowrap">{link.label}</a>))}
         </div>
 
-        <div class="md:hidden flex justify-center items-center w-28 lg:w-44">
+        <div class="lg:hidden flex justify-center items-center w-28 lg:w-44">
             <button id="mobile-menu-button" type="button" class="h-8 w-10 text-white group" role="switch" aria-checked="false" aria-label="Toggle mobile menu">
                 <span class="relative flex overflow-hidden items-center justify-center size-full transform transition-all duration-200">
                     <span class="flex flex-col justify-between size-full transform transition-all duration-300 origin-center overflow-hidden">
@@ -38,7 +37,7 @@ let pathLang = Astro.url.pathname.split('/')[1] || 'it';
             </button>
         </div>
 
-        <div class="hidden md:flex justify-center items-center w-44 md:w-36 lg:w-44">
+        <div class="hidden lg:flex justify-center items-center w-44 md:w-36 lg:w-44">
             <div id="languageSelector"
                  class="dropdown md:flex justify-center items-center size-44 md:size-36 lg:size-44">
                 <div class="relative inline-block ">
@@ -65,7 +64,7 @@ let pathLang = Astro.url.pathname.split('/')[1] || 'it';
         </div>
     </div>
 
-    <div id="mobile-menu" class="hidden md:hidden bg-black bg-opacity-85">
+    <div id="mobile-menu" class="hidden bg-black bg-opacity-85">
         <div class="flex flex-col gap-2 p-2">
             {links.map((link: any) => (
                     <a href={link.href} aria-label={`Go to ${link.label} section`}
