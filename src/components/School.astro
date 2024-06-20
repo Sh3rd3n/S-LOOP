@@ -13,10 +13,12 @@ let { header, subHeader, paragraph1, paragraph2, paragraph3, paragraph4, paragra
 
 <section id="school" class="mt-20 px-10 lg:px-32 2xl:px-72 relative">
     <div class="flex flex-col md:flex-row">
-        <div class="md:order-last md:w-1/2 md:pl-2 lg:pl-4 text-normal md:text-xl">
-            <h2 class="font-stencil font-normal text-7xl w-full text-left"><Fragment set:html={header} /></h2>
+        <div class="md:order-last md:w-1/2 md:pl-2 lg:pl-4">
+            <div class="text-normal md:text-xl">
+                <h2 class="font-stencil font-normal text-7xl w-full text-left"><Fragment set:html={header} /></h2>
+            </div>
+            <h1 class="font-stencil font-normal text-4xl text-teal leading-snug w-full my-6"><Fragment set:html={subHeader} /></h1>
             <div class="size-32 bg-teal bg-opacity-50 absolute -top-7 -z-10 md:-ml-20"></div>
-            <h2 class="font-stencil font-normal text-4xl text-teal leading-snug w-full my-6"><Fragment set:html={subHeader} /></h2>
             <TextParagraph content={paragraph1} />
             <TextParagraph content={paragraph2} />
             <div class="size-32 bg-teal bg-opacity-30 absolute right-0 -z-10"></div>
