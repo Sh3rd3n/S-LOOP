@@ -10,7 +10,7 @@ let { header, description } = Astro.props;
     <div class="w-full px-10 lg:px-32 2xl:px-72 flex flex-col-reverse md:flex-row items-center gap-6 mt-2 md:mt-12"}>
         <Image src={kiteRentalImg} alt="Kite to rent" loading="lazy" class="aspect-auto object-cover md:w-1/2 -z-20"/>
         <div class="container md:w-1/2">
-            <h2 class="hidden md:block w-full my-6 font-stencil font-normal text-6xl lg:7xl">{header}</h2>
+            <h3 class="hidden md:block w-full my-6 font-stencil font-normal text-6xl lg:7xl">{header}</h3>
             <p class=" mt-6 sm:mt-0 font-jost font-light text-lg lg:text-xl md:!leading-relaxed lg:!leading-loose"><Fragment set:html={description} /></p>
         </div>
     </div>
