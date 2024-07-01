@@ -6,12 +6,12 @@ import TextParagraph from "./TextParagraph.astro";
 
 import teamImg from "../assets/content/team.webp";
 import cristianImg from "../assets/content/cristian.webp";
-import marcoImg from "../assets/content/marco.jpg";
+import andreaImg from "../assets/content/andrea.jpg";
 import noemiImg from "../assets/content/noemi.jpg";
 import blancoImg from "../assets/content/blanco.webp";
 import leaImg from "../assets/content/lea.webp";
 
-let { header, paragraph1, paragraph2, cristianBio, marcoBio, noemiBio } = Astro.props;
+let { header, paragraph1, paragraph2, cristianBio, andreaBio, noemiBio } = Astro.props;
 ---
 
 <section id="who-are-we" class="mt-20 relative overflow-hidden">
@@ -37,7 +37,7 @@ let { header, paragraph1, paragraph2, cristianBio, marcoBio, noemiBio } = Astro.
 
     <div class="w-2/5 h-24 md:h-32 bg-teal bg-opacity-60 mt-4 md:mt-10 -z-10"></div>
 
-    <StaffMember name="MARCO" image={marcoImg} imageOnRight={true} description={marcoBio} />
+    <StaffMember name="ANDREA" image={andreaImg} imageOnRight={true} description={andreaBio} />
 
     <div class="h-24 md:h-32 mt-4 md:mt-10 flex flex-row justify-end gap-6">
         <span class="w-3 md:w-10 h-full bg-teal bg-opacity-60"></span>
